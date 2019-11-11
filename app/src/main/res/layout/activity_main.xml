@@ -6,13 +6,88 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <Button
+        android:id="@+id/setNotificationsBtn"
+        android:layout_width="131dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="28dp"
+        android:text="Set notifications"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/resultsBtn"
+        app:layout_constraintHorizontal_bias="0.012"
+        app:layout_constraintStart_toStartOf="@+id/testMeBtn"
+        app:layout_constraintTop_toTopOf="@+id/testMeBtn"
+        app:layout_constraintVertical_bias="0.551" />
+
+    <Button
+        android:id="@+id/myMoodBtn"
+        android:layout_width="334dp"
+        android:layout_height="71dp"
+        android:layout_marginBottom="196dp"
+        android:text="My mood"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/testMeBtn"
+        android:layout_width="334dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="14dp"
+        android:text="Test me"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myMoodBtn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/resultsBtn"
+        android:layout_width="127dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="32dp"
+        android:text="Results"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/testMeBtn"
+        app:layout_constraintTop_toTopOf="@+id/testMeBtn"
+        app:layout_constraintVertical_bias="0.632" />
+
+    <TextView
+        android:id="@+id/makeTestBtn"
+        android:layout_width="154dp"
+        android:layout_height="37dp"
+        android:text="! Make a test !"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/myMoodBtn"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/riskTxt"
+        android:layout_width="182dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="32dp"
+        android:text="Risk  % Text"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="350dp"
+        android:layout_height="182dp"
+        app:layout_constraintBottom_toTopOf="@+id/makeTestBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/riskTxt"
+        app:srcCompat="@drawable/nicolas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
