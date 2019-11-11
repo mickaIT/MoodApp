@@ -57,7 +57,7 @@ public class KeyoboardSpeedActivity extends AppCompatActivity {
 
                     //calculate the time
                     long totalTime=(endTime-startTime)/1000;
-                    tv_result.setText(("Finished in" + totalTime)+"seconds");
+                    tv_result.setText(("Finished in " + totalTime)+" seconds");
                     et_writeText.setEnabled(false);
                     et_writeText.clearFocus();
                 }
