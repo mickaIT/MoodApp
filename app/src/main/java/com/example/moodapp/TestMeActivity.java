@@ -7,6 +7,10 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.moodapp.Test_me_activities.FaceMoodActivity;
+import com.example.moodapp.Test_me_activities.HeartRateActivity;
+import com.example.moodapp.Test_me_activities.KeyoboardSpeedActivity;
+
 public class TestMeActivity extends AppCompatActivity {
 
     @Override
@@ -19,6 +23,26 @@ public class TestMeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent startIntent = new Intent(getApplicationContext(), KeyoboardSpeedActivity.class);
+                startActivity(startIntent);
+
+            }
+        });
+
+        final Button heartRateBtn = (Button)findViewById(R.id.heartRateBtn);
+        heartRateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(), HeartRateActivity.class);
+                startActivity(startIntent);
+
+            }
+        });
+
+        final Button faceMoodBtn = (Button)findViewById(R.id.faceMoodBtn);
+        faceMoodBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startIntent = new Intent(getApplicationContext(), FaceMoodActivity.class);
                 startActivity(startIntent);
 
             }

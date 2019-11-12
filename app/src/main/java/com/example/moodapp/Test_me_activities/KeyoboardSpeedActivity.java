@@ -1,4 +1,4 @@
-package com.example.moodapp;
+package com.example.moodapp.Test_me_activities;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -7,6 +7,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.moodapp.R;
 
 public class KeyoboardSpeedActivity extends AppCompatActivity {
 
@@ -28,7 +30,7 @@ public class KeyoboardSpeedActivity extends AppCompatActivity {
 
 
         fullStory=tv_text.getText().toString();
-
+        final int numOfWords = countWordsUsingSplit(fullStory);
         et_writeText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -57,7 +59,7 @@ public class KeyoboardSpeedActivity extends AppCompatActivity {
 
                     //calculate the time
                     long totalTime=(endTime-startTime)/1000;
-                    tv_result.setText(("Finished in " + totalTime)+" seconds");
+                    tv_result.setText("Finished in " + String.valueOf(totalTime)+" seconds" + String.valueOf(numOfWords*60/totalTime) +" per minute");
                     et_writeText.setEnabled(false);
                     et_writeText.clearFocus();
                 }
@@ -70,5 +72,14 @@ public class KeyoboardSpeedActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public static int countWordsUsingSplit(String input) {
+        if (input == null || input.isEmpty()) {
+            return 0;
+        }
+
+        String[] words = input.split("\\s+");
+        return words.length;
     }
 }

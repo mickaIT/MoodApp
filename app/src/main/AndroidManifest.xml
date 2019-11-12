@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ResultsActivity"></activity>
+        <activity android:name=".Test_me_activities.FaceMoodActivity"></activity>
+        <activity android:name=".Test_me_activities.HeartRateActivity" />
+        <activity android:name=".ResultsActivity" />
         <activity android:name=".SetNotificationsActivity" />
         <activity android:name=".MyMoodActivity" />
         <activity android:name=".TestMeActivity" />
-        <activity android:name=".KeyoboardSpeedActivity" />
+        <activity android:name=".Test_me_activities.KeyoboardSpeedActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

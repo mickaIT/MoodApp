@@ -7,7 +7,7 @@
     tools:context=".TestMeActivity">
 
     <Button
-        android:id="@+id/heartRateBtn2"
+        android:id="@+id/heartRateBtn"
         android:layout_width="122dp"
         android:layout_height="57dp"
         android:text="Heart Rate"
