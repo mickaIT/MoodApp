@@ -1,4 +1,4 @@
-package com.example.moodapp.Test_me_activities;
+package com.example.moodapp.test_me_activities;
 
 import android.os.Bundle;
 import android.text.Editable;

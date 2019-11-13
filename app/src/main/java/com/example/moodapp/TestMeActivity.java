@@ -7,9 +7,9 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.moodapp.Test_me_activities.FaceMoodActivity;
-import com.example.moodapp.Test_me_activities.HeartRateActivity;
-import com.example.moodapp.Test_me_activities.KeyoboardSpeedActivity;
+import com.example.moodapp.test_me_activities.faceMoodActivity.FaceMoodActivity;
+import com.example.moodapp.test_me_activities.HeartRateActivity;
+import com.example.moodapp.test_me_activities.KeyoboardSpeedActivity;
 
 public class TestMeActivity extends AppCompatActivity {
 

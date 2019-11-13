@@ -1,8 +1,8 @@
-package com.example.moodapp.Test_me_activities;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.moodapp.test_me_activities;
 
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.moodapp.R;
 

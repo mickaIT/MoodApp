@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.moodapp">
 
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Test_me_activities.FaceMoodActivity"></activity>
-        <activity android:name=".Test_me_activities.HeartRateActivity" />
+        <activity android:name=".test_me_activities.faceMoodActivity.FaceMoodActivity"></activity>
+        <activity android:name=".test_me_activities.HeartRateActivity" />
         <activity android:name=".ResultsActivity" />
         <activity android:name=".SetNotificationsActivity" />
         <activity android:name=".MyMoodActivity" />
         <activity android:name=".TestMeActivity" />
-        <activity android:name=".Test_me_activities.KeyoboardSpeedActivity" />
+        <activity android:name=".test_me_activities.KeyoboardSpeedActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

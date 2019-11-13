@@ -1,32 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Test_me_activities.FaceMoodActivity">
-
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    tools:context="com.example.moodapp.test_me_activities.faceMoodActivity.FaceMoodActivity">
 
     <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:weightSum="2"
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/btnTakePicture"
-            android:text="Take picture"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        <com.example.moodapp.test_me_activities.faceMoodActivity.camera.CameraSurfacePreview
+            android:id="@+id/preview"
+            android:layout_width="424dp"
+            android:layout_height="510dp">
+
+            <com.example.moodapp.test_me_activities.faceMoodActivity.camera.CameraOverlay
+                android:id="@+id/faceOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.example.moodapp.test_me_activities.faceMoodActivity.camera.CameraSurfacePreview>
+
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="77dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:layout_gravity="fill"
+            android:background="@color/white"
+            android:drawableTop="@drawable/ic_camera_alt_black_64dp"
+            android:textColor="#e8e9e9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
+    </LinearLayout>
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

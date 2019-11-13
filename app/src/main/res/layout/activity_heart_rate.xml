@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Test_me_activities.HeartRateActivity">
+    tools:context=".test_me_activities.HeartRateActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>
