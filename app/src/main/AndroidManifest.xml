@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.moodapp">
 
-
     <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -14,8 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".test_me_activities.faceMoodActivity.FaceMoodActivity"></activity>
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="face" />
+
         <activity android:name=".test_me_activities.HeartRateActivity" />
+        <activity
+            android:name="com.example.moodapp.test_me_activities.faceMoodActivity.FaceMoodActivity"
+            android:label="@string/title_activity_face_recognition" />
         <activity android:name=".ResultsActivity" />
         <activity android:name=".SetNotificationsActivity" />
         <activity android:name=".MyMoodActivity" />
@@ -29,5 +35,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
