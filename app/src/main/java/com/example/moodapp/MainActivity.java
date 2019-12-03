@@ -9,11 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+//        DatabaseHelper myDb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+//        myDb=new DatabaseHelper(this);
         //TEST ME
 
        final Button testMeBtn = (Button)findViewById(R.id.testMeBtn);
