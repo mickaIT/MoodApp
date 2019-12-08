@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAMSE ="MoodApp.db";
+    public static final String DATABASE_NAME ="MoodApp.db";
     public static final String TABLE_NAME="MyMoods_table";
     public static final String ID="ID";
     public static final String DATE="DATE";
@@ -23,22 +23,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     public DatabaseHelper(@Nullable Context context) {
-        super(context, DATABASE_NAMSE, null, 1);
+        super(context, DATABASE_NAME, null, 1);
     }
-
+//(datetime('now','localtime'))
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table " + TABLE_NAME +" " +
                 "(ID INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "DATE DATE," +
-                "TALKATIVENESS TEXT," +
-                "INSOMNIA TEXT," +
-                "FLIGHT_OFI_IDEAS TEXT," +
-                "TIREDNESS TEXT," +
-                "HYPERACTIVITY TEXT," +
-                "IRRITABILITY TEXT," +
-                "MEGALOMANIA TEXT," +
-                "POOR_DECISIONS TEXT)");
+                "DATE DATETIME DEFAULT CURRENT_TIMESTAMP," +
+                "TALKATIVENESS INTEGER," +
+                "INSOMNIA INTEGER," +
+                "FLIGHT_OFI_IDEAS INTEGER," +
+                "TIREDNESS INTEGER," +
+                "HYPERACTIVITY INTEGER," +
+                "IRRITABILITY INTEGER," +
+                "MEGALOMANIA INTEGER," +
+                "POOR_DECISIONS INTEGER)");
     }
 
     @Override
@@ -47,10 +47,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(int talkativeness, int insomnia, int flightOfIdeas, int tiredness,
-                              int hyperactivity, int irritability, int megalomania, int poorDecisions){
+    public boolean insertData( Integer talkativeness, Integer insomnia, Integer flightOfIdeas, Integer tiredness,
+                               Integer hyperactivity, Integer irritability, Integer megalomania, Integer poorDecisions){
 
         SQLiteDatabase db = this.getWritableDatabase();
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        Date date = new Date();
+//        ContentValues initialValues = new ContentValues();
+//        initialValues.put("date_created", dateFormat.format(date));
+//        long rowId = db.insert(TABLE_NAME, null, initialValues);
         ContentValues contentValues = new ContentValues();
         contentValues.put(SYMPTHOM_1,talkativeness);
         contentValues.put(SYMPTHOM_2,insomnia);
@@ -66,8 +71,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return false;
         }
         else return true;
-
-
 
     }
 }
