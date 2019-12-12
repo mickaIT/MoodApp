@@ -51,13 +51,12 @@ public class MyMoodActivity extends AppCompatActivity {
     //=======================================DATAABSE===================
 
     Button addMoodData;
-    DatabaseHelper myDb;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_mood);
-        myDb=new DatabaseHelper(this);
 
         talkativenessTxt=(TextView) findViewById(R.id.talkativenessTxt);
         insomniaTxt=(TextView) findViewById(R.id.insomniaTxt);
@@ -170,7 +169,7 @@ public class MyMoodActivity extends AppCompatActivity {
         new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isInserted = myDb.insertData(talkativenessValue,
+                        boolean isInserted = MainActivity.myDb.insertData(talkativenessValue,
                                 insomniaValue,
                                 flightOfIdeasValue,
                                 tirednessValue,
