@@ -1,81 +1,29 @@
 package com.example.moodapp;
 
-import android.database.Cursor;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ResultsActivity extends AppCompatActivity {
 
     Button viewAllResultsButton;
     Button deleteResultsButton;
-    TextView textView;
-    LinearLayout linearLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-        linearLayout = findViewById(R.id.linearLayout);
         viewAllResultsButton=(Button) findViewById(R.id.viewAllResultsButton);
         deleteResultsButton=(Button) findViewById(R.id.deleteResultsButton);
-        textView=(TextView) findViewById(R.id.textView);
-        viewAll();
 
-
+//        viewAllResultsButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent startIntent = new Intent(getApplicationContext(), ViewAllResultsActivity.class);
+//                startActivity(startIntent);
+//            }
+//        });
     }
 
-    public void viewAll(){
-
-        viewAllResultsButton.setOnClickListener(
-                new View.OnClickListener(){
-                    @Override
-                    public void onClick(View v){
-//                        textView.setText();
-                        Cursor res= MainActivity.myDb.getAllData();
-                        if (MainActivity.myDb.isDbEmpty()) {
-
-                            //res.getColumnCount()==0){0
-                            //show message
-
-                            showMessage("Error", "Nothing found");
-                           return;
-                       }
-                       else {
-                           StringBuffer buffer=new StringBuffer();
-                            while(res.moveToNext()) {
-                                buffer.append("\nId: " + res.getString(0)+"\n\n");
-                                buffer.append("Date :" + res.getString(1)+"\n");
-                                buffer.append("Talkativeness :" + res.getString(2)+"\n");
-                                buffer.append("Insomnia :" + res.getString(3)+"\n");
-                                buffer.append("Flight of ideas :" + res.getString(4)+"\n");
-                                buffer.append("Tiredness :" + res.getString(5)+"\n");
-                                buffer.append("Hyperactivity :" + res.getString(6)+"\n");
-                                buffer.append("Irritability :" + res.getString(7)+"\n");
-                                buffer.append("Megalomania :" + res.getString(8)+"\n");
-                                buffer.append("PoorDecisions :" + res.getString(9)+"\n");
-                            }
-
-                            //Show all data
-                           textView.setText(buffer.toString());
-
-                           showMessage("Data",buffer.toString());
-                            }
-                       }
-                    }
-        );
-                }
-
-                public void showMessage(String title, String Message){
-                    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                    builder.setCancelable(true);
-                    builder.setTitle(title);
-
-                }
-    }
-
+}

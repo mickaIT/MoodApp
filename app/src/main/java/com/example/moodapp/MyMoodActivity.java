@@ -51,12 +51,13 @@ public class MyMoodActivity extends AppCompatActivity {
     //=======================================DATAABSE===================
 
     Button addMoodData;
-
+    DatabaseHelper myDb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_mood);
+        myDb=new DatabaseHelper(this);
 
         talkativenessTxt=(TextView) findViewById(R.id.talkativenessTxt);
         insomniaTxt=(TextView) findViewById(R.id.insomniaTxt);
@@ -102,38 +103,38 @@ public class MyMoodActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 switch (seekBar.getId()) {
-                        case R.id.talkativenessSeekBar:
-                            talkativenessValue=(Integer)progress;
-                            break;
+                    case R.id.talkativenessSeekBar:
+                        talkativenessValue=(Integer)progress;
+                        break;
 
-                        case R.id.insomniaSeekBar:
-                            insomniaValue=(Integer)progress;
-                            AddData();
+                    case R.id.insomniaSeekBar:
+                        insomniaValue=(Integer)progress;
+                        AddData();
 
-                            break;
-                        case R.id.flightOfIdeasSeekBar:
-                           flightOfIdeasValue=(Integer)progress;
+                        break;
+                    case R.id.flightOfIdeasSeekBar:
+                        flightOfIdeasValue=(Integer)progress;
 
-                            break;
-                        case R.id.tirednessSeekBar:
-                            tirednessValue=(Integer)progress;
+                        break;
+                    case R.id.tirednessSeekBar:
+                        tirednessValue=(Integer)progress;
 
-                            break;
-                        case R.id.hyperactivitySeekBar:
-                            hyperactivityValue=(Integer)progress;
-                            break;
+                        break;
+                    case R.id.hyperactivitySeekBar:
+                        hyperactivityValue=(Integer)progress;
+                        break;
 
-                        case R.id.irritabilitySeekBar:
-                            irritabilityValue=(Integer)progress;
-                            break;
+                    case R.id.irritabilitySeekBar:
+                        irritabilityValue=(Integer)progress;
+                        break;
 
-                        case R.id.poorDecisionsSeekBar:
-                            poorDecisionsValue=(Integer)progress;
-                            break;
+                    case R.id.poorDecisionsSeekBar:
+                        poorDecisionsValue=(Integer)progress;
+                        break;
 
-                        case R.id.megalomaniaSeekBar:
-                            megalomaniaValue=(Integer)progress;
-                            break;
+                    case R.id.megalomaniaSeekBar:
+                        megalomaniaValue=(Integer)progress;
+                        break;
                 }
             }
 
@@ -166,10 +167,10 @@ public class MyMoodActivity extends AppCompatActivity {
         tirednessTxt.setText(String.valueOf(talkativenessValue));
 
         addMoodData.setOnClickListener(
-        new View.OnClickListener() {
+                new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isInserted = MainActivity.myDb.insertData(talkativenessValue,
+                        boolean isInserted = myDb.insertData(talkativenessValue,
                                 insomniaValue,
                                 flightOfIdeasValue,
                                 tirednessValue,

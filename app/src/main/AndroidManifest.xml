@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ViewAllResultsActivity"></activity>
 
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
@@ -20,7 +21,7 @@
 
         <activity android:name=".test_me_activities.HeartRateActivity" />
         <activity
-            android:name="com.example.moodapp.test_me_activities.faceMoodActivity.FaceMoodActivity"
+            android:name=".test_me_activities.faceMoodActivity.FaceMoodActivity"
             android:label="@string/title_activity_face_recognition" />
         <activity android:name=".ResultsActivity" />
         <activity android:name=".SetNotificationsActivity" />
@@ -35,4 +36,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
