@@ -36,8 +36,6 @@ public class MyMoodActivity extends AppCompatActivity {
     SeekBar poorDecisionsSeekBar;
 
     SeekBar.OnSeekBarChangeListener mlistener;
-    TextView textViewTalk;
-    TextView textViewIns;
 
     Integer talkativenessValue=3;
     Integer insomniaValue=3;
@@ -51,13 +49,12 @@ public class MyMoodActivity extends AppCompatActivity {
     //=======================================DATAABSE===================
 
     Button addMoodData;
-    DatabaseHelper myDb;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_mood);
-        myDb=new DatabaseHelper(this);
 
         talkativenessTxt=(TextView) findViewById(R.id.talkativenessTxt);
         insomniaTxt=(TextView) findViewById(R.id.insomniaTxt);
@@ -76,28 +73,9 @@ public class MyMoodActivity extends AppCompatActivity {
         irritabilitySeekBar=(SeekBar) findViewById(R.id.irritabilitySeekBar);
         poorDecisionsSeekBar=(SeekBar) findViewById(R.id.poorDecisionsSeekBar);
         megalomaniaSeekBar=(SeekBar) findViewById(R.id.megalomaniaSeekBar);
-        textViewTalk=(TextView) findViewById(R.id.textViewTalk);
-        textViewIns=(TextView) findViewById(R.id.textViewIns);
 
         //ADD BUTTON
         addMoodData=(Button) findViewById(R.id.addMoodData);
-
-        talkativenessSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                textViewTalk.setText(String.valueOf(i));
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
 
         mlistener = new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -164,13 +142,11 @@ public class MyMoodActivity extends AppCompatActivity {
     }
 
     public  void AddData() {
-        tirednessTxt.setText(String.valueOf(talkativenessValue));
-
         addMoodData.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isInserted = myDb.insertData(talkativenessValue,
+                        boolean isInserted = MainActivity.myDb.insertData(talkativenessValue,
                                 insomniaValue,
                                 flightOfIdeasValue,
                                 tirednessValue,

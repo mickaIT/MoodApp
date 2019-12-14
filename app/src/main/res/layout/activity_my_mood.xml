@@ -248,46 +248,16 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="71dp"
-        android:layout_marginLeft="71dp"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="73dp"
-        android:layout_marginRight="73dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginLeft="69dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginRight="75dp"
         android:layout_marginBottom="32dp"
         android:gravity="center"
         android:text="Mood test"
         android:textSize="30sp"
         android:textStyle="bold" />
-
-    <View
-        android:id="@+id/divider3"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@+id/talkativenessSeekBar"
-        android:layout_below="@+id/moodTextTxt"
-        android:layout_marginTop="52dp"
-        android:layout_marginBottom="54dp"
-        android:background="?android:attr/listDivider" />
-
-    <TextView
-        android:id="@+id/textViewTalk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="351dp"
-        android:layout_marginRight="351dp"
-        android:text="TextViewTalk" />
-
-    <TextView
-        android:id="@+id/textViewIns"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="275dp"
-        android:layout_marginRight="275dp"
-        android:text="TextViewIns" />
 
 
 </RelativeLayout>

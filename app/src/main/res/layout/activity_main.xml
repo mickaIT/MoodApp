@@ -7,20 +7,6 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/setNotificationsBtn"
-        android:layout_width="131dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="28dp"
-        android:text="Set notifications"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/resultsBtn"
-        app:layout_constraintHorizontal_bias="0.012"
-        app:layout_constraintStart_toStartOf="@+id/testMeBtn"
-        app:layout_constraintTop_toTopOf="@+id/testMeBtn"
-        app:layout_constraintVertical_bias="0.551" />
-
-    <Button
         android:id="@+id/myMoodBtn"
         android:layout_width="334dp"
         android:layout_height="71dp"
@@ -28,8 +14,36 @@
         android:text="My mood"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.623"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.726" />
+
+    <Button
+        android:id="@+id/setNotificationsBtn"
+        android:layout_width="131dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="20dp"
+        android:text="Set notifications"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/resultsBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/testMeBtn"
+        app:layout_constraintTop_toTopOf="@+id/testMeBtn"
+        app:layout_constraintVertical_bias="0.592" />
+
+    <Button
+        android:id="@+id/resultsBtn"
+        android:layout_width="127dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginBottom="30dp"
+        android:text="Results"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/testMeBtn"
+        app:layout_constraintTop_toTopOf="@+id/testMeBtn"
+        app:layout_constraintVertical_bias="0.618" />
 
     <Button
         android:id="@+id/testMeBtn"
@@ -39,29 +53,18 @@
         android:text="Test me"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.623"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myMoodBtn"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/resultsBtn"
-        android:layout_width="127dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="46dp"
-        android:layout_marginBottom="32dp"
-        android:text="Results"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/testMeBtn"
-        app:layout_constraintTop_toTopOf="@+id/testMeBtn"
-        app:layout_constraintVertical_bias="0.632" />
+        app:layout_constraintVertical_bias="0.022" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="167dp"
-        android:layout_height="165dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />

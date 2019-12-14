@@ -2,10 +2,18 @@ package com.example.moodapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME ="MoodApp.db";
@@ -51,12 +59,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                                Integer hyperactivity, Integer irritability, Integer megalomania, Integer poorDecisions){
 
         SQLiteDatabase db = this.getWritableDatabase();
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//        Date date = new Date();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date date = new Date();
 //        ContentValues initialValues = new ContentValues();
-//        initialValues.put("date_created", dateFormat.format(date));
 //        long rowId = db.insert(TABLE_NAME, null, initialValues);
         ContentValues contentValues = new ContentValues();
+        contentValues.put(DATE, dateFormat.format(date));
         contentValues.put(SYMPTHOM_1,talkativeness);
         contentValues.put(SYMPTHOM_2,insomnia);
         contentValues.put(SYMPTHOM_3,flightOfIdeas);
@@ -72,5 +80,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         else return true;
 
+    }
+    public Cursor getAllData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res=db.rawQuery("SELECT * FROM "+TABLE_NAME,null);
+        return res;
+    }
+
+    public boolean isDbEmpty() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = null;
+        try {
+            c = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+            if (c == null || c.getCount() == 0) {
+                return true;
+            } else if (c.moveToFirst()) {
+                Log.d(TAG,"isDbEmpty: not empty");
+                return false;
+            }
+        } catch (SQLiteException e) {
+            Log.d(TAG, "isDbEmpty: doesn't exist");
+            return true;
+        }finally {
+            if(c != null){
+                c.close();
+            }
+        }
+        return true;
     }
 }
