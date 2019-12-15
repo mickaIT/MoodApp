@@ -11,6 +11,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
@@ -108,4 +109,60 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return true;
     }
+
+//    public ArrayList<BarEntry> queryXData(){
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        ArrayList<BarEntry> xData= new ArrayList<>();
+//
+//        String query="SELECT "+DATE+" FROM "+TABLE_NAME+ " GROUP BY "+DATE;
+//        Cursor cursor=db.rawQuery(query,null);
+//
+//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+//
+//            //?
+////            xData.add((Date) cursor);
+//        }
+//        cursor.close();
+//        return xData;
+//    }
+
+    public ArrayList<Integer> queryXData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<Integer> xData= new ArrayList<>();
+
+        String query="SELECT "+SYMPTHOM_1+" FROM "+TABLE_NAME;
+                //+ " GROUP BY "+DATE;
+        Cursor cursor=db.rawQuery(query,null);
+
+//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+        while(cursor.moveToNext()){
+
+             xData.add(cursor.getInt(0));
+        }
+        cursor.close();
+        return xData;
+    }
+
+    public ArrayList<String> queryYData(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<String> yData=new ArrayList<String>();
+//
+        String query="SELECT "+SYMPTHOM_2+" FROM "+TABLE_NAME;
+                //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
+        Cursor cursor=db.rawQuery(query,null);
+
+//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+
+        while(cursor.moveToNext()){
+            yData.add(cursor.getString(0));
+//            talkativenessData.add(cursor.getInt(0));
+//            talkativenessData.add(0);
+
+        }
+        cursor.close();
+        return yData;
+    }
+
+
+
 }

@@ -17,8 +17,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginRight="6dp"
         android:layout_marginBottom="378dp"
-        android:max="5"
-        android:progress="3" />
+        android:max="10"
+        android:progress="5" />
 
     <SeekBar
         android:id="@+id/insomniaSeekBar"
@@ -30,8 +30,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginRight="6dp"
         android:layout_marginBottom="335dp"
-        android:max="5"
-        android:progress="3" />
+        android:max="10"
+        android:progress="5" />
 
     <SeekBar
         android:id="@+id/flightOfIdeasSeekBar"
@@ -43,8 +43,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginRight="6dp"
         android:layout_marginBottom="301dp"
-        android:max="5"
-        android:progress="3" />
+        android:max="10"
+        android:progress="5" />
 
     <SeekBar
         android:id="@+id/tirednessSeekBar"
@@ -56,8 +56,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginRight="6dp"
         android:layout_marginBottom="255dp"
-        android:max="5"
-        android:progress="3" />
+        android:max="10"
+        android:progress="5" />
 
     <SeekBar
         android:id="@+id/hyperactivitySeekBar"
@@ -69,8 +69,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginRight="6dp"
         android:layout_marginBottom="221dp"
-        android:max="5"
-        android:progress="3" />
+        android:max="10"
+        android:progress="5" />
 
     <SeekBar
         android:id="@+id/irritabilitySeekBar"
@@ -82,8 +82,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginRight="6dp"
         android:layout_marginBottom="187dp"
-        android:max="5"
-        android:progress="3" />
+        android:max="10"
+        android:progress="5" />
 
     <SeekBar
         android:id="@+id/megalomaniaSeekBar"
@@ -95,8 +95,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginRight="6dp"
         android:layout_marginBottom="159dp"
-        android:max="5"
-        android:progress="3" />
+        android:max="10"
+        android:progress="5" />
 
     <SeekBar
         android:id="@+id/poorDecisionsSeekBar"
@@ -109,8 +109,8 @@
         android:layout_marginEnd="6dp"
         android:layout_marginRight="6dp"
         android:layout_marginBottom="122dp"
-        android:max="5"
-        android:progress="3" />
+        android:max="10"
+        android:progress="5" />
 
     <TextView
         android:id="@+id/poorDecisionsTxt"
