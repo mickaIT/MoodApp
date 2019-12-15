@@ -11,7 +11,7 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.formatter.ValueFormatter;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 
 import java.util.ArrayList;
@@ -91,14 +91,16 @@ public class ResultsActivity extends AppCompatActivity {
         final ArrayList<BarEntry> yVals=new ArrayList<BarEntry>();
         final ArrayList<String> yData=MainActivity.myDb.queryYData();
 
+        //addind BarEtries to Y-values
         for(int i=0;i<MainActivity.myDb.queryYData().size();i++){
             BarEntry barEntry=new BarEntry(i, Float.parseFloat(MainActivity.myDb.queryYData().get(i)));
             yVals.add(barEntry);
         }
 
-        final ArrayList<Integer> xVals=new ArrayList<Integer>();
-        final ArrayList<Integer> xData=MainActivity.myDb.queryXData();
+        final ArrayList<String> xVals=new ArrayList<String>();
+        final ArrayList<String> xData=MainActivity.myDb.queryXData();
 
+        //addind BarEtries to X-values
         for(int i=0;i<MainActivity.myDb.queryXData().size();i++){
 //            BarEntry barEntry=new BarEntry(i, MainActivity.myDb.queryYData().get(i));
             xVals.add(xData.get(i));
@@ -110,8 +112,8 @@ public class ResultsActivity extends AppCompatActivity {
         BarData data=new BarData(dataSets1);
 
         //      new value formatter !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-        barChart.getXAxis().setValueFormatter(new com.example.moodapp.Graphs_classes.ValueFormatter());
-        barChart.getXAxis().setValueFormatter(new com.example.moodapp.Graphs_classes.ValueFormatter());
+        barChart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xVals));
+//        barChart.getYAxis().setValueFormatter(new com.example.moodapp.Graphs_classes.ValueFormatter());
 
 
         barChart.setData(data);

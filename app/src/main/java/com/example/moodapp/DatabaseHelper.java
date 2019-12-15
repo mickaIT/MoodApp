@@ -126,18 +126,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //        return xData;
 //    }
 
-    public ArrayList<Integer> queryXData(){
+    public ArrayList<String> queryXData(){
         SQLiteDatabase db = this.getWritableDatabase();
-        ArrayList<Integer> xData= new ArrayList<>();
+        ArrayList<String> xData= new ArrayList<>();
 
-        String query="SELECT "+SYMPTHOM_1+" FROM "+TABLE_NAME;
+        String query="SELECT "+DATE+" FROM "+TABLE_NAME;
                 //+ " GROUP BY "+DATE;
         Cursor cursor=db.rawQuery(query,null);
 
 //        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
         while(cursor.moveToNext()){
 
-             xData.add(cursor.getInt(0));
+             xData.add(cursor.getString(0));
         }
         cursor.close();
         return xData;

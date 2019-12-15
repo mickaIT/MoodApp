@@ -60,4 +60,5 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:+'
     implementation 'androidx.constraintlayout:constraintlayout:+'
     implementation 'com.jjoe64:graphview:4.0.0'
+    implementation 'org.jetbrains:annotations-java5:15.0'
 }
