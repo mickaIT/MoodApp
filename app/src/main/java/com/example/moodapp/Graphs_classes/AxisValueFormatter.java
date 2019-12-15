@@ -4,19 +4,20 @@ import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
 
-public class AxisValueFormatter implements IAxisValueFormatter {
+public class AxisValueFormatter extends com.github.mikephil.charting.formatter.IndexAxisValueFormatter implements IAxisValueFormatter {
 
-    private String[] mValues;
+    private ArrayList<String> mValues=new ArrayList();
 
-    SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd:hh:mm:ss");
+    SimpleDateFormat sdf = new SimpleDateFormat("MM.dd");
 
-    public AxisValueFormatter(String[] values) {
-        this.mValues = values; }
+    public AxisValueFormatter() {
+ }
 
     @Override
     public String getFormattedValue(float value, AxisBase axis) {
-        return sdf.format(new Date((long) value));
+        SimpleDateFormat sdf = new SimpleDateFormat("MM:dd");
+        return sdf.format(mValues);
     }
 }

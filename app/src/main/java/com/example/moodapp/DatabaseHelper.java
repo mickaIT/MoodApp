@@ -133,8 +133,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String query="SELECT "+DATE+" FROM "+TABLE_NAME;
                 //+ " GROUP BY "+DATE;
         Cursor cursor=db.rawQuery(query,null);
-
 //        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+
+
         while(cursor.moveToNext()){
 
              xData.add(cursor.getString(0));
@@ -143,12 +144,152 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return xData;
     }
 
-    public ArrayList<String> queryYData(){
+    public ArrayList<String> querySympthom_1_Data(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<String> yData=new ArrayList<String>();
+//
+        String query="SELECT "+SYMPTHOM_1+" FROM "+TABLE_NAME;
+                //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
+        Cursor cursor=db.rawQuery(query,null);
+
+//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+
+        while(cursor.moveToNext()){
+            yData.add(cursor.getString(0));
+//            talkativenessData.add(cursor.getInt(0));
+//            talkativenessData.add(0);
+
+        }
+        cursor.close();
+        return yData;
+    }
+
+    public ArrayList<String> querySympthom_2_Data(){
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<String> yData=new ArrayList<String>();
 //
         String query="SELECT "+SYMPTHOM_2+" FROM "+TABLE_NAME;
-                //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
+        //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
+        Cursor cursor=db.rawQuery(query,null);
+
+//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+
+        while(cursor.moveToNext()){
+            yData.add(cursor.getString(0));
+//            talkativenessData.add(cursor.getInt(0));
+//            talkativenessData.add(0);
+
+        }
+        cursor.close();
+        return yData;
+    }
+
+    public ArrayList<String> querySympthom_3_Data(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<String> yData=new ArrayList<String>();
+//
+        String query="SELECT "+SYMPTHOM_3+" FROM "+TABLE_NAME;
+        //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
+        Cursor cursor=db.rawQuery(query,null);
+
+//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+
+        while(cursor.moveToNext()){
+            yData.add(cursor.getString(0));
+//            talkativenessData.add(cursor.getInt(0));
+//            talkativenessData.add(0);
+
+        }
+        cursor.close();
+        return yData;
+    }
+
+    public ArrayList<String> querySympthom_4_Data(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<String> yData=new ArrayList<String>();
+//
+        String query="SELECT "+SYMPTHOM_4+" FROM "+TABLE_NAME;
+        //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
+        Cursor cursor=db.rawQuery(query,null);
+
+//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+
+        while(cursor.moveToNext()){
+            yData.add(cursor.getString(0));
+//            talkativenessData.add(cursor.getInt(0));
+//            talkativenessData.add(0);
+
+        }
+        cursor.close();
+        return yData;
+    }
+
+    public ArrayList<String> querySympthom_5_Data(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<String> yData=new ArrayList<String>();
+//
+        String query="SELECT "+SYMPTHOM_5+" FROM "+TABLE_NAME;
+        //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
+        Cursor cursor=db.rawQuery(query,null);
+
+//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+
+        while(cursor.moveToNext()){
+            yData.add(cursor.getString(0));
+//            talkativenessData.add(cursor.getInt(0));
+//            talkativenessData.add(0);
+
+        }
+        cursor.close();
+        return yData;
+    }
+
+    public ArrayList<String> querySympthom_6_Data(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<String> yData=new ArrayList<String>();
+//
+        String query="SELECT "+SYMPTHOM_6+" FROM "+TABLE_NAME;
+        //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
+        Cursor cursor=db.rawQuery(query,null);
+
+//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+
+        while(cursor.moveToNext()){
+            yData.add(cursor.getString(0));
+//            talkativenessData.add(cursor.getInt(0));
+//            talkativenessData.add(0);
+
+        }
+        cursor.close();
+        return yData;
+    }
+
+    public ArrayList<String> querySympthom_7_Data(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<String> yData=new ArrayList<String>();
+//
+        String query="SELECT "+SYMPTHOM_7+" FROM "+TABLE_NAME;
+        //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
+        Cursor cursor=db.rawQuery(query,null);
+
+//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+
+        while(cursor.moveToNext()){
+            yData.add(cursor.getString(0));
+//            talkativenessData.add(cursor.getInt(0));
+//            talkativenessData.add(0);
+
+        }
+        cursor.close();
+        return yData;
+    }
+
+    public ArrayList<String> querySympthom_8_Data(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<String> yData=new ArrayList<String>();
+//
+        String query="SELECT "+SYMPTHOM_8+" FROM "+TABLE_NAME;
+        //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
 //        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){

@@ -1,263 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyMoodActivity">
-
-
-    <SeekBar
-        android:id="@+id/talkativenessSeekBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="378dp"
-        android:max="10"
-        android:progress="5" />
-
-    <SeekBar
-        android:id="@+id/insomniaSeekBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="335dp"
-        android:max="10"
-        android:progress="5" />
-
-    <SeekBar
-        android:id="@+id/flightOfIdeasSeekBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="301dp"
-        android:max="10"
-        android:progress="5" />
-
-    <SeekBar
-        android:id="@+id/tirednessSeekBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="255dp"
-        android:max="10"
-        android:progress="5" />
-
-    <SeekBar
-        android:id="@+id/hyperactivitySeekBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="221dp"
-        android:max="10"
-        android:progress="5" />
-
-    <SeekBar
-        android:id="@+id/irritabilitySeekBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="187dp"
-        android:max="10"
-        android:progress="5" />
-
-    <SeekBar
-        android:id="@+id/megalomaniaSeekBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="159dp"
-        android:max="10"
-        android:progress="5" />
-
-    <SeekBar
-        android:id="@+id/poorDecisionsSeekBar"
-        style="@style/Widget.AppCompat.SeekBar.Discrete"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_marginBottom="122dp"
-        android:max="10"
-        android:progress="5" />
-
-    <TextView
-        android:id="@+id/poorDecisionsTxt"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginTop="454dp"
-        android:layout_marginBottom="123dp"
-        android:text="Poor decisions"
-        tools:layout_alignParentRight="true" />
-
-    <TextView
-        android:id="@+id/inrritabilityTxt"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginRight="279dp"
-        android:layout_marginBottom="182dp"
-        android:text="Irritability" />
-
-    <TextView
-        android:id="@+id/megalomaniaTxt"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginBottom="154dp"
-        android:text="Megalomania"
-        tools:layout_alignParentRight="true" />
-
-    <TextView
-        android:id="@+id/tirednessTxt"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginBottom="262dp"
-        android:text="Tiredness"
-        tools:layout_alignParentRight="true" />
-
-
-
-    <TextView
-        android:id="@+id/flightOfIdeasTxt"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginBottom="302dp"
-        android:text="Flight of ideas"
-        tools:layout_alignParentRight="true" />
-
-    <TextView
-        android:id="@+id/insomniaTxt"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginBottom="342dp"
-        android:text="Insomnia"
-        tools:layout_alignParentRight="true" />
-
-    <TextView
-        android:id="@+id/hyperActivityTxt"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginBottom="220dp"
-        android:text="Hyperactivity"
-        tools:layout_alignParentRight="true" />
-    <TextView
-        android:id="@+id/talkativenessTxt"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginBottom="366dp"
-        android:text="Logorrhea\n(talkativeness)"
-        tools:layout_alignParentRight="true" />
-
+    tools:context=".ViewAllResultsActivity">
 
 
     <Button
         android:id="@+id/addMoodData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="116dp"
-        android:layout_marginLeft="116dp"
-        android:layout_marginTop="-71dp"
-        android:layout_marginEnd="125dp"
-        android:layout_marginRight="125dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="Add Data" />
+        android:text="Add Data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView"
+        app:layout_constraintVertical_bias="0.339" />
 
     <TextView
         android:id="@+id/moodTextTxt"
-        android:layout_width="267dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="69dp"
-        android:layout_marginLeft="69dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginRight="75dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="48dp"
         android:gravity="center"
-        android:text="Mood test"
+        android:text="TEST"
+        android:textColor="#000000"
         android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moodTextTxt">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <SeekBar
+                android:id="@+id/talkativenessSeekBar"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/talkativenessTxt"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="14dp"
+                android:layout_marginRight="14dp"
+                android:layout_marginBottom="3dp"
+                android:max="10"
+                android:progress="5" />
+
+            <SeekBar
+                android:id="@+id/insomniaSeekBar"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/insomniaTxt"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:max="10"
+                android:progress="5" />
+
+            <SeekBar
+                android:id="@+id/flightOfIdeasSeekBar"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/flightOfIdeasTxt"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="15dp"
+                android:max="10"
+                android:progress="5" />
+
+            <SeekBar
+                android:id="@+id/tirednessSeekBar"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tirednessTxt"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="15dp"
+                android:max="10"
+                android:progress="5" />
+
+            <SeekBar
+                android:id="@+id/hyperactivitySeekBar"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/hyperActivityTxt"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="15dp"
+                android:max="10"
+                android:progress="5" />
+
+            <SeekBar
+                android:id="@+id/irritabilitySeekBar"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/inrritabilityTxt"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="15dp"
+                android:max="10"
+                android:progress="5" />
+
+            <SeekBar
+                android:id="@+id/megalomaniaSeekBar"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/megalomaniaTxt"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="15dp"
+                android:max="10"
+                android:progress="5" />
+
+            <SeekBar
+                android:id="@+id/poorDecisionsSeekBar"
+                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/poorDecisionsTxt"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:max="10"
+                android:progress="5" />
+
+            <TextView
+                android:id="@+id/poorDecisionsTxt"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/megalomaniaTxt"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="20dp"
+                android:text="Poor decisions"
+                tools:layout_alignParentRight="true" />
+
+            <TextView
+                android:id="@+id/inrritabilityTxt"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hyperActivityTxt"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginTop="20dp"
+                android:text="Irritability" />
+
+            <TextView
+                android:id="@+id/megalomaniaTxt"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/inrritabilityTxt"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="20dp"
+                android:text="Megalomania"
+                tools:layout_alignParentRight="true" />
+
+            <TextView
+                android:id="@+id/tirednessTxt"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/flightOfIdeasTxt"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="20dp"
+                android:text="Tiredness"
+                tools:layout_alignParentRight="true" />
 
 
-</RelativeLayout>
+            <TextView
+                android:id="@+id/flightOfIdeasTxt"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/insomniaTxt"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="20dp"
+                android:text="Flight of ideas"
+                tools:layout_alignParentRight="true" />
+
+
+            <TextView
+                android:id="@+id/insomniaTxt"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/talkativenessTxt"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="20dp"
+                android:text="Insomnia"
+                tools:layout_alignParentRight="true" />
+
+            <TextView
+                android:id="@+id/hyperActivityTxt"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tirednessTxt"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="18dp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="20dp"
+                android:text="Hyperactivity"
+                tools:layout_alignParentRight="true" />
+
+            <TextView
+                android:id="@+id/talkativenessTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:maxLines="1"
+                android:text="Talkativeness"
+                tools:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

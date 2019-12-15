@@ -36,15 +36,15 @@ public class MyMoodActivity extends AppCompatActivity {
     SeekBar poorDecisionsSeekBar;
 
     SeekBar.OnSeekBarChangeListener mlistener;
-
-    Integer talkativenessValue=3;
-    Integer insomniaValue=3;
-    Integer flightOfIdeasValue=3;
-    Integer tirednessValue=3;
-    Integer hyperactivityValue=3;
-    Integer irritabilityValue=3;
-    Integer megalomaniaValue=3;
-    Integer poorDecisionsValue=3;
+    int zeroValue=5;
+    Integer talkativenessValue=5;
+    Integer insomniaValue=5;
+    Integer flightOfIdeasValue=5;
+    Integer tirednessValue=5;
+    Integer hyperactivityValue=5;
+    Integer irritabilityValue=5;
+    Integer megalomaniaValue=5;
+    Integer poorDecisionsValue=5;
 
     //=======================================DATAABSE===================
 
@@ -82,36 +82,36 @@ public class MyMoodActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 switch (seekBar.getId()) {
                     case R.id.talkativenessSeekBar:
-                        talkativenessValue=(Integer)progress;
+                        talkativenessValue=(Integer)progress-zeroValue;
                         break;
 
                     case R.id.insomniaSeekBar:
-                        insomniaValue=(Integer)progress;
+                        insomniaValue=(Integer)progress-zeroValue;
                         AddData();
 
                         break;
                     case R.id.flightOfIdeasSeekBar:
-                        flightOfIdeasValue=(Integer)progress;
+                        flightOfIdeasValue=(Integer)progress-zeroValue;
 
                         break;
                     case R.id.tirednessSeekBar:
-                        tirednessValue=(Integer)progress;
+                        tirednessValue=(Integer)progress-zeroValue;
 
                         break;
                     case R.id.hyperactivitySeekBar:
-                        hyperactivityValue=(Integer)progress;
+                        hyperactivityValue=(Integer)progress-zeroValue;
                         break;
 
                     case R.id.irritabilitySeekBar:
-                        irritabilityValue=(Integer)progress;
+                        irritabilityValue=(Integer)progress-zeroValue;
                         break;
 
                     case R.id.poorDecisionsSeekBar:
-                        poorDecisionsValue=(Integer)progress;
+                        poorDecisionsValue=(Integer)progress-zeroValue;
                         break;
 
                     case R.id.megalomaniaSeekBar:
-                        megalomaniaValue=(Integer)progress;
+                        megalomaniaValue=(Integer)progress-zeroValue;
                         break;
                 }
             }
