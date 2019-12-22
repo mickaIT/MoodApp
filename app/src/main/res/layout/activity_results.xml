@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/whitePink"
     tools:context=".ResultsActivity">
 
     <LinearLayout
@@ -21,19 +22,18 @@
         <com.webianks.library.scroll_choice.ScrollChoice
             android:id="@+id/scroll_choice_months"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="130dp"
             android:layout_marginBottom="8dp"
-                    app:scroll_atmospheric="true"
-                    app:scroll_background_color="#eee6e6"
+            app:scroll_atmospheric="true"
+            app:scroll_background_color="#f5f0f0"
             app:scroll_indicator="true"
-                app:scroll_item_text_size="17sp"
-                app:scroll_indicator_size="1dp"
-                    app:scroll_indicator_color="#FFF"
-                    app:scroll_item_align="center"
-                    app:scroll_item_text_color="?attr/colorAccent"
-                    app:scroll_selected_item_background="#FFF"
-                    app:scroll_selected_item_text_color="#FFC107"
-        />
+            app:scroll_indicator_color="#FFF"
+            app:scroll_indicator_size="1dp"
+            app:scroll_item_align="center"
+            app:scroll_item_text_color="?attr/colorAccent"
+            app:scroll_item_text_size="14sp"
+            app:scroll_selected_item_background="#FFF"
+            app:scroll_selected_item_text_color="#FFC107" />
 
 
 <!--        app:scroll_selected_item_background="#000000"-->
