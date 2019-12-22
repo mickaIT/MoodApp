@@ -56,23 +56,7 @@ public class MyMoodActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_mood);
 
-        talkativenessTxt=(TextView) findViewById(R.id.talkativenessTxt);
-        insomniaTxt=(TextView) findViewById(R.id.insomniaTxt);
-        flightOfIdeasTxt=(TextView) findViewById(R.id.flightOfIdeasTxt);
-        tirednessTxt=(TextView) findViewById(R.id.tirednessTxt);
-        hyperActivityTxt=(TextView) findViewById(R.id.hyperActivityTxt);
-        inrritabilityTxt=(TextView) findViewById(R.id.inrritabilityTxt);
-        megalomaniaTxt=(TextView) findViewById(R.id.megalomaniaTxt);
-        poorDecisionsTxt=(TextView) findViewById(R.id.poorDecisionsTxt);
-
-        talkativenessSeekBar=(SeekBar) findViewById(R.id.talkativenessSeekBar);
-        insomniaSeekBar=(SeekBar) findViewById(R.id.insomniaSeekBar);
-        flightOfIdeasSeekBar=(SeekBar) findViewById(R.id.flightOfIdeasSeekBar);
-        tirednessSeekBar=(SeekBar) findViewById(R.id.tirednessSeekBar);
-        hyperactivitySeekBar=(SeekBar) findViewById(R.id.hyperactivitySeekBar);
-        irritabilitySeekBar=(SeekBar) findViewById(R.id.irritabilitySeekBar);
-        poorDecisionsSeekBar=(SeekBar) findViewById(R.id.poorDecisionsSeekBar);
-        megalomaniaSeekBar=(SeekBar) findViewById(R.id.megalomaniaSeekBar);
+        initViews();
 
         //ADD BUTTON
         addMoodData=(Button) findViewById(R.id.addMoodData);
@@ -141,6 +125,7 @@ public class MyMoodActivity extends AppCompatActivity {
         AddData();
     }
 
+
     public  void AddData() {
         addMoodData.setOnClickListener(
                 new View.OnClickListener() {
@@ -162,6 +147,27 @@ public class MyMoodActivity extends AppCompatActivity {
                     }
                 }
         );
+    }
+
+    private void initViews(){
+        talkativenessTxt=(TextView) findViewById(R.id.talkativenessTxt);
+        insomniaTxt=(TextView) findViewById(R.id.insomniaTxt);
+        flightOfIdeasTxt=(TextView) findViewById(R.id.flightOfIdeasTxt);
+        tirednessTxt=(TextView) findViewById(R.id.tirednessTxt);
+        hyperActivityTxt=(TextView) findViewById(R.id.hyperActivityTxt);
+        inrritabilityTxt=(TextView) findViewById(R.id.inrritabilityTxt);
+        megalomaniaTxt=(TextView) findViewById(R.id.megalomaniaTxt);
+        poorDecisionsTxt=(TextView) findViewById(R.id.poorDecisionsTxt);
+
+        talkativenessSeekBar=(SeekBar) findViewById(R.id.talkativenessSeekBar);
+        insomniaSeekBar=(SeekBar) findViewById(R.id.insomniaSeekBar);
+        flightOfIdeasSeekBar=(SeekBar) findViewById(R.id.flightOfIdeasSeekBar);
+        tirednessSeekBar=(SeekBar) findViewById(R.id.tirednessSeekBar);
+        hyperactivitySeekBar=(SeekBar) findViewById(R.id.hyperactivitySeekBar);
+        irritabilitySeekBar=(SeekBar) findViewById(R.id.irritabilitySeekBar);
+        poorDecisionsSeekBar=(SeekBar) findViewById(R.id.poorDecisionsSeekBar);
+        megalomaniaSeekBar=(SeekBar) findViewById(R.id.megalomaniaSeekBar);
+
     }
 
 }

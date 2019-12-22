@@ -9,8 +9,6 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
@@ -65,52 +63,52 @@ public class BarChartActivity extends AppCompatActivity {
     }
 
 
-    public void addDataToGraph(){
-
-        //yVals CHART VALUES
-        final ArrayList<BarEntry> yVals=new ArrayList<BarEntry>();
-        //xVals SQLite VALUES
-        final ArrayList<String> xData=MainActivity.myDb.queryXData();
-
-        //yVals SQLite VALUES
-        final ArrayList<String> sympthom_1_data=MainActivity.myDb.querySympthom_1_Data();
-        final ArrayList<String> sympthom_2_data=MainActivity.myDb.querySympthom_2_Data();
-        final ArrayList<String> sympthom_3_data=MainActivity.myDb.querySympthom_3_Data();
-        final ArrayList<String> sympthom_4_data=MainActivity.myDb.querySympthom_4_Data();
-        final ArrayList<String> sympthom_5_data=MainActivity.myDb.querySympthom_5_Data();
-        final ArrayList<String> sympthom_6_data=MainActivity.myDb.querySympthom_6_Data();
-        final ArrayList<String> sympthom_7_data=MainActivity.myDb.querySympthom_7_Data();
-        final ArrayList<String> sympthom_8_data=MainActivity.myDb.querySympthom_8_Data();
-
-        //addind BarEtries to Y-values
-        for(int i=0;i<sympthom_1_data.size();i++){
-            BarEntry barEntry=new BarEntry(i, Float.parseFloat(sympthom_1_data.get(i)));
-            yVals.add(barEntry);
-        }
-
-        //xVals CHART VALUES (DATE)
-        final ArrayList<String> xVals=new ArrayList<String>();
-
-
-        //addind BarEtries to X-values
-
-        for(int i=0;i<MainActivity.myDb.queryXData().size();i++){
-//            BarEntry barEntry=new BarEntry(i, MainActivity.myDb.queryYData().get(i));
-            xVals.add(xData.get(i));
-        }
-
-        BarDataSet dataSet=new BarDataSet(yVals,"Graph");
-
-        ArrayList<IBarDataSet> dataSets1=new ArrayList<>();
-        dataSets1.add(dataSet);
-        BarData data=new BarData(dataSets1);
-
-        //      new value formatter !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
-        chart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xVals));
-//        barChart.getYAxis().setValueFormatter(new com.example.moodapp.Graphs_classes.ValueFormatter());
-
-
-        chart.setData(data);
-
-    }
+//    public void addDataToGraph(){
+//
+//        //yVals CHART VALUES
+//        final ArrayList<BarEntry> yVals=new ArrayList<BarEntry>();
+//        //xVals SQLite VALUES
+//        final ArrayList<String> xData=MainActivity.myDb.queryXData();
+//
+//        //yVals SQLite VALUES
+//        final ArrayList<String> sympthom_1_data=MainActivity.myDb.querySympthom_1_Data();
+//        final ArrayList<String> sympthom_2_data=MainActivity.myDb.querySympthom_2_Data();
+//        final ArrayList<String> sympthom_3_data=MainActivity.myDb.querySympthom_3_Data();
+//        final ArrayList<String> sympthom_4_data=MainActivity.myDb.querySympthom_4_Data();
+//        final ArrayList<String> sympthom_5_data=MainActivity.myDb.querySympthom_5_Data();
+//        final ArrayList<String> sympthom_6_data=MainActivity.myDb.querySympthom_6_Data();
+//        final ArrayList<String> sympthom_7_data=MainActivity.myDb.querySympthom_7_Data();
+//        final ArrayList<String> sympthom_8_data=MainActivity.myDb.querySympthom_8_Data();
+//
+//        //addind BarEtries to Y-values
+//        for(int i=0;i<sympthom_1_data.size();i++){
+//            BarEntry barEntry=new BarEntry(i, Float.parseFloat(sympthom_1_data.get(i)));
+//            yVals.add(barEntry);
+//        }
+//
+//        //xVals CHART VALUES (DATE)
+//        final ArrayList<String> xVals=new ArrayList<String>();
+//
+//
+//        //addind BarEtries to X-values
+//
+//        for(int i=0;i<MainActivity.myDb.queryXData().size();i++){
+////            BarEntry barEntry=new BarEntry(i, MainActivity.myDb.queryYData().get(i));
+//            xVals.add(xData.get(i));
+//        }
+//
+//        BarDataSet dataSet=new BarDataSet(yVals,"Graph");
+//
+//        ArrayList<IBarDataSet> dataSets1=new ArrayList<>();
+//        dataSets1.add(dataSet);
+//        BarData data=new BarData(dataSets1);
+//
+//        //      new value formatter !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+//        chart.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xVals));
+////        barChart.getYAxis().setValueFormatter(new com.example.moodapp.Graphs_classes.ValueFormatter());
+//
+//
+//        chart.setData(data);
+//
+//    }
 }
