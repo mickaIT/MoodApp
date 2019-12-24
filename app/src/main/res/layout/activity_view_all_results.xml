@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/whitePink"
+    android:background="#f3f3f3"
     tools:context=".ViewAllResultsActivity">
 
     <ScrollView
@@ -28,7 +28,11 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+
+                android:fontFamily="@font/josefin_sans_thin"
+                android:textColor="#D5252525"
+                android:textStyle="bold"/>
         </LinearLayout>
     </ScrollView>
 
@@ -40,12 +44,16 @@
         android:gravity="center_horizontal"
         android:text="RESULTS"
         android:textSize="30sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/scrollView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+
+        android:fontFamily="@font/josefin_sans_thin"
+        android:textAllCaps="true"
+        android:textColor="#D5252525"
+        android:textStyle="bold"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

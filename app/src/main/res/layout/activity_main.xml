@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/whitePink"
+    android:background="#f3f3f3"
     tools:context=".MainActivity">
 
     <Button
@@ -18,7 +18,12 @@
         app:layout_constraintHorizontal_bias="0.623"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.957" />
+        app:layout_constraintVertical_bias="0.957"
+        android:background="@color/white"
+
+        android:fontFamily="@font/josefin_sans_semibold"
+        android:textColor="#D5252525"
+        />
 
     <Button
         android:id="@+id/testMeBtn"
@@ -31,7 +36,13 @@
         app:layout_constraintHorizontal_bias="0.623"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myMoodBtn"
-        app:layout_constraintVertical_bias="0.034" />
+        app:layout_constraintVertical_bias="0.034"
+        android:background="@color/white"
+
+
+        android:fontFamily="@font/josefin_sans_semibold"
+        android:textColor="#D5252525"
+        />
 
     <Button
         android:id="@+id/setNotificationsBtn"
@@ -39,13 +50,17 @@
         android:layout_height="60dp"
         android:layout_marginTop="45dp"
         android:layout_marginBottom="20dp"
+        android:fontFamily="@font/josefin_sans_semibold"
         android:text="Set notifications"
+        android:textColor="#D5252525"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/resultsBtn"
         app:layout_constraintHorizontal_bias="0.0"
+        android:background="@color/white"
+
+
         app:layout_constraintStart_toStartOf="@+id/testMeBtn"
-        app:layout_constraintTop_toTopOf="@+id/testMeBtn"
-        app:layout_constraintVertical_bias="0.592" />
+        app:layout_constraintTop_toTopOf="@+id/testMeBtn" />
 
     <Button
         android:id="@+id/resultsBtn"
@@ -57,7 +72,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/testMeBtn"
         app:layout_constraintTop_toTopOf="@+id/testMeBtn"
-        app:layout_constraintVertical_bias="0.618" />
+        app:layout_constraintVertical_bias="0.618"
+        android:background="@color/white"
+
+        android:fontFamily="@font/josefin_sans_semibold"
+        android:textColor="#D5252525"
+        />
 
     <ImageView
         android:id="@+id/imageView"

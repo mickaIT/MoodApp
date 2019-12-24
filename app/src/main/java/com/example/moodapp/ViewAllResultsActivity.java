@@ -37,7 +37,7 @@ public class ViewAllResultsActivity extends AppCompatActivity {
                             StringBuffer buffer=new StringBuffer();
                             while(res.moveToNext()) {
                                 buffer.append("\nId: " + res.getString(0)+"\n\n");
-                                buffer.append("Date :" + res.getString(1)+"\n");
+                                buffer.append("Date :" + res.getString(1)+"\n\n");
                                 buffer.append("Talkativeness :" + res.getString(2)+"\n");
                                 buffer.append("Insomnia :" + res.getString(3)+"\n");
                                 buffer.append("Flight of ideas :" + res.getString(4)+"\n");

@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
@@ -37,8 +38,12 @@ public class ResultsActivity extends AppCompatActivity {
     ScrollChoice scrollMonths;
     static TextView textView;
     LocalDate today = LocalDate.now();
+    TextView textYear;
+    ImageButton buttonRight;
+    ImageButton buttonLeft;
     int currentMonth = today.getMonthValue();
     int currentYear = today.getYear();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +53,40 @@ public class ResultsActivity extends AppCompatActivity {
         chart=(BarChart) findViewById(R.id.barChart);
         scrollMonths=(ScrollChoice) findViewById(R.id.scroll_choice_months);
         textView=(TextView)findViewById(R.id.textView2);
+        textYear=(TextView)findViewById(R.id.textYear);
+        buttonLeft=(ImageButton)findViewById(R.id.left_nav);
+        buttonRight=(ImageButton)findViewById(R.id.right_nav);
+
+
         MainActivity.myDb.addTestData();
         addDataToGraph(currentMonth,currentYear);
+
+        textYear.setText(Integer.toString(currentYear));
+
+        buttonLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                currentYear=currentYear-1;
+                textYear.setText(Integer.toString(currentYear));
+                chart.clear();
+                addDataToGraph(currentMonth,currentYear);
+            }
+        });
+
+        // Images right navigatin
+        buttonRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                currentYear=currentYear+1;
+                textYear.setText(Integer.toString(currentYear));
+                chart.clear();
+                addDataToGraph(currentMonth,currentYear);
+            }
+        });
+
+
+
+
         loadMonths();
         //zmień na aktualne===========================================================
         scrollMonths.addItems(months,currentMonth-1); //index starts with zero
@@ -63,7 +100,6 @@ public class ResultsActivity extends AppCompatActivity {
                 textView.setText(String.valueOf(intPosition));
             }
         });
-
 
 
 

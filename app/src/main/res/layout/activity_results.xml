@@ -4,8 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/whitePink"
-    tools:context=".ResultsActivity">
+    android:background="#f3f3f3"    tools:context=".ResultsActivity">
+
+    <ImageButton
+        android:id="@+id/left_nav"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center_vertical|left"
+        android:layout_marginStart="84dp"
+        android:layout_marginLeft="84dp"
+        android:background="@null"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/right_nav"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center_vertical|right"
+        android:layout_marginEnd="84dp"
+        android:layout_marginRight="84dp"
+        android:background="@null"
+        android:src="@drawable/ic_arrow_forward_black_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+ />
 
     <LinearLayout
         android:id="@+id/linearLayout4"
@@ -22,8 +46,8 @@
         <com.webianks.library.scroll_choice.ScrollChoice
             android:id="@+id/scroll_choice_months"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:layout_marginBottom="8dp"
+            android:layout_height="140dp"
+            android:layout_marginBottom="0dp"
             app:scroll_atmospheric="true"
             app:scroll_background_color="#f5f0f0"
             app:scroll_indicator="true"
@@ -31,9 +55,12 @@
             app:scroll_indicator_size="1dp"
             app:scroll_item_align="center"
             app:scroll_item_text_color="?attr/colorAccent"
-            app:scroll_item_text_size="14sp"
+            app:scroll_item_text_size="16sp"
             app:scroll_selected_item_background="#FFF"
-            app:scroll_selected_item_text_color="#FFC107" />
+            app:scroll_selected_item_text_color="#FFC107"
+            android:fontFamily="@font/josefin_sans_thin"
+            android:textAllCaps="true"
+            android:textStyle="bold"            />
 
 
 <!--        app:scroll_selected_item_background="#000000"-->
@@ -64,7 +91,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="5dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +100,8 @@
             <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/barChart"
                 android:layout_width="match_parent"
-                android:layout_height="300dp" />
+                android:layout_height="300dp"
+                android:fontFamily="@font/josefin_sans_semibold" />
 
             <!--            <com.github.mikephil.charting.charts.BarChart-->
             <!--                android:id="@+id/chart"-->
@@ -87,14 +115,19 @@
         android:id="@+id/viewAllResultsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="5dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="12dp"
         android:text="View all"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+
+        android:fontFamily="@font/josefin_sans_semibold"
+        android:textColor="#D5252525"
+        android:background="@color/white"
+        />
 
     <TextView
         android:id="@+id/textView2"
@@ -105,27 +138,30 @@
         android:layout_marginBottom="16dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/viewAllResultsButton" />
+        app:layout_constraintStart_toEndOf="@+id/viewAllResultsButton"
+        android:fontFamily="@font/josefin_sans_semibold"
+        android:textColor="#D5252525"
+        />
 
+    <TextView
+        android:id="@+id/textYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:fontFamily="@font/josefin_sans_thin"
+        android:gravity="center_horizontal"
+        android:text="TextView"
+        android:textAllCaps="true"
+        android:textColor="#D5252525"
+        android:textSize="24sp"
+        android:textStyle="bold"
 
-    <!--    <LinearLayout-->
-<!--        android:id="@+id/linearLayout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="vertical"-->
-<!--        android:layout_marginTop="110dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
-
-
-<!--        <com.github.mikephil.charting.charts.BarChart-->
-<!--            android:id="@+id/chart"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="400dp" />-->
-
-<!--    </LinearLayout>-->
-<!--    </ScrollView>-->
+        app:layout_constraintEnd_toStartOf="@+id/right_nav"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/left_nav"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

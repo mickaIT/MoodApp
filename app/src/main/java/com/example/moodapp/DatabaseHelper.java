@@ -118,7 +118,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void addTestData(){
         SQLiteDatabase db=this.getWritableDatabase();
-        String query="INSERT INTO "+TABLE_NAME+ " (DATE, TALKATIVENESS, INSOMNIA, FLIGHT_OF_IDEAS, TIREDNESS, HYPERACTIVITY, IRRITABILITY, MEGALOMANIA, POOR_DECISIONS)" + " VALUES (NULL, 2019/11/10,5,3,4,3,3,4,2)";
+        String query="INSERT INTO "+TABLE_NAME+ " (DATE, TALKATIVENESS, INSOMNIA, FLIGHT_OF_IDEAS, TIREDNESS, HYPERACTIVITY, IRRITABILITY, MEGALOMANIA, POOR_DECISIONS)" + " VALUES (NULL, 2019/11/10,5,3,-4,3,3,-4,2)";
 
         Cursor cursor=db.rawQuery(query,null);
         cursor.close();
@@ -132,9 +132,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DATE, dateFormat.format(date));
         contentValues.put(SYMPTHOM_1,5);
-        contentValues.put(SYMPTHOM_2,5);
+        contentValues.put(SYMPTHOM_2,-5);
         contentValues.put(SYMPTHOM_3,4);
-        contentValues.put(SYMPTHOM_4,3);
+        contentValues.put(SYMPTHOM_4,-3);
         contentValues.put(SYMPTHOM_5,4);
         contentValues.put(SYMPTHOM_6,2);
         contentValues.put(SYMPTHOM_7,7);

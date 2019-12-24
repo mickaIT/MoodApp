@@ -31,17 +31,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:gravity="center"
+
+        android:fontFamily="@font/josefin_sans_thin"
+        android:gravity="center_horizontal|top"
+        android:singleLine="true"
         android:text="TEST"
-        android:textSize="30sp"
+
+
+        android:textAllCaps="true"
+        android:textColor="#9426b5"
+        android:textSize="50sp"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:fontFamily="@font/josefin_sans_thin"
-        android:textAllCaps="true"
-        android:textColor="#D5252525"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -75,9 +80,9 @@
                 android:max="10"
                 android:progress="5"
 
-                tools:ignore="NewApi"
                 android:progressTint="@color/orange"
-                android:thumbTint="#d77b00"/>
+                android:thumbTint="@color/orange"
+                />
 
             <SeekBar
                 android:id="@+id/insomniaSeekBar"
@@ -92,8 +97,10 @@
                 android:layout_marginRight="15dp"
                 android:max="10"
                 android:progress="5"
-                android:progressTint="#9426b5"
-                android:colorControlActivated="#e78200"/>
+
+                android:progressTint="@color/orange"
+                android:thumbTint="@color/orange"
+                />
 
             <SeekBar
                 android:id="@+id/flightOfIdeasSeekBar"
@@ -106,7 +113,11 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginRight="15dp"
                 android:max="10"
-                android:progress="5" />
+                android:progress="5"
+
+                android:progressTint="@color/orange"
+                android:thumbTint="@color/orange"
+                />
 
             <SeekBar
                 android:id="@+id/tirednessSeekBar"
@@ -119,7 +130,11 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginRight="15dp"
                 android:max="10"
-                android:progress="5" />
+                android:progress="5"
+
+                android:progressTint="@color/orange"
+                android:thumbTint="@color/orange"
+                />
 
             <SeekBar
                 android:id="@+id/hyperactivitySeekBar"
@@ -132,7 +147,11 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginRight="15dp"
                 android:max="10"
-                android:progress="5" />
+                android:progress="5"
+
+                android:progressTint="@color/orange"
+                android:thumbTint="@color/orange"
+                />
 
             <SeekBar
                 android:id="@+id/irritabilitySeekBar"
@@ -145,7 +164,11 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginRight="15dp"
                 android:max="10"
-                android:progress="5" />
+                android:progress="5"
+
+                android:progressTint="@color/orange"
+                android:thumbTint="@color/orange"
+                />
 
             <SeekBar
                 android:id="@+id/megalomaniaSeekBar"
@@ -158,11 +181,15 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginRight="15dp"
                 android:max="10"
-                android:progress="5" />
+                android:progress="5"
+
+                android:progressTint="@color/orange"
+                android:thumbTint="@color/orange"
+                />
 
             <SeekBar
                 android:id="@+id/poorDecisionsSeekBar"
-                style="@style/Widget.AppCompat.SeekBar.Discrete"
+                style="@android:style/Widget.Material.SeekBar.Discrete"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/poorDecisionsTxt"
@@ -173,8 +200,10 @@
                 android:layout_marginRight="15dp"
                 android:max="10"
                 android:progress="5"
-                android:progressTint="#9426b5"
-                android:colorControlActivated="#e78200"/>
+
+                android:progressTint="@color/orange"
+                android:thumbTint="@color/orange"
+                />
 
             <TextView
                 android:id="@+id/poorDecisionsTxt"

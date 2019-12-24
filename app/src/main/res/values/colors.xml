@@ -5,5 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="white">#ffffff</color>
     <color name="whitePink">#eee6e6</color>
+    <color name="orange">#ff9500</color>
+    <color name="purple">#9426b5</color>
 </resources>
 
