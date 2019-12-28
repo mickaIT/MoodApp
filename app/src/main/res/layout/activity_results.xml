@@ -143,7 +143,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textMonthOverview"
+                android:id="@+id/textStackedBarchartOverview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/josefin_sans_thin"
@@ -173,7 +173,7 @@
                 android:layout_height="10dp" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/textBarChartOverview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/josefin_sans_thin"
@@ -189,6 +189,62 @@
                 android:layout_margin="10dp" >
 
             </com.github.mikephil.charting.charts.BarChart>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1">
+
+            </com.github.mikephil.charting.charts.LineChart>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart2"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1">
+
+            </com.github.mikephil.charting.charts.LineChart>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart3"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart4"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart5"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart6"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart7"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart8"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_weight="1" />
 
 
         </LinearLayout>
