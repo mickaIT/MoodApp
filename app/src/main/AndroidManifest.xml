@@ -8,14 +8,15 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        tools:replace="android:label"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Mood Control"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".BarChartActivity"></activity>
+        android:theme="@style/AppTheme"
+        tools:replace="android:label">
+        <activity android:name=".LineGraphsActivity"></activity>
+        <activity android:name=".BarChartActivity" />
         <activity android:name=".ViewAllResultsActivity" />
 
         <meta-data
@@ -42,7 +43,7 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".notifications.AlertReceiver"/>
+        <receiver android:name=".notifications.AlertReceiver" />
     </application>
 
 </manifest>

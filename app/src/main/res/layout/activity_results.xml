@@ -4,76 +4,121 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f3f3f3"    tools:context=".ResultsActivity">
+    android:background="#f3f3f3"
+    tools:context=".ResultsActivity">
 
-    <ImageButton
-        android:id="@+id/left_nav"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_gravity="center_vertical|left"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:background="@null"
-        android:src="@drawable/ic_arrow_back_black_24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/right_nav"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:layout_gravity="center_vertical|right"
-        android:layout_marginEnd="84dp"
-        android:layout_marginRight="84dp"
-        android:background="@null"
-        android:src="@drawable/ic_arrow_forward_black_24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
- />
-
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/buttonPieChart"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
+
+        android:background="@color/white"
+        android:fontFamily="@font/josefin_sans_semibold"
+        android:text="View all"
+        android:textColor="#D5252525"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.623" />
+
+    <Button
+        android:id="@+id/buttonViewAllResults"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
+
+        android:background="@color/white"
+        android:fontFamily="@font/josefin_sans_semibold"
+        android:text="View all"
+        android:textColor="#D5252525"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.082" />
+
+    <RelativeLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="243dp"
+        android:layout_height="173dp"
+        android:background="#ffffff"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.120000005">
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/josefin_sans_thin"
+            android:gravity="center_horizontal"
+            android:text="0000"
+
+            android:textAllCaps="true"
+            android:textColor="#D5252525"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/left_nav"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center_vertical|left"
+            android:background="@null"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/right_nav"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_vertical|right"
+            android:background="@null"
+            android:src="@drawable/ic_arrow_forward_black_24dp" />
 
         <com.webianks.library.scroll_choice.ScrollChoice
             android:id="@+id/scroll_choice_months"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="118dp"
+            android:layout_marginTop="55dp"
             android:layout_marginBottom="0dp"
-            app:scroll_atmospheric="true"
-            app:scroll_background_color="#f5f0f0"
-            app:scroll_indicator="true"
-            app:scroll_indicator_color="#FFF"
-            app:scroll_indicator_size="1dp"
-            app:scroll_item_align="center"
-            app:scroll_item_text_color="?attr/colorAccent"
-            app:scroll_item_text_size="16sp"
-            app:scroll_selected_item_background="#FFF"
-            app:scroll_selected_item_text_color="#FFC107"
             android:fontFamily="@font/josefin_sans_thin"
             android:textAllCaps="true"
-            android:textStyle="bold"            />
+            android:textStyle="bold"
+            app:scroll_atmospheric="true"
+            app:scroll_background_color="#f9f9f9"
+            app:scroll_indicator="true"
+            app:scroll_indicator_color="#FFF"
+            app:scroll_indicator_size="0dp"
+            app:scroll_item_align="center"
+            app:scroll_item_text_color="?attr/colorAccent"
+            app:scroll_item_text_size="13dp"
+            app:scroll_selected_item_background="#FFF"
+            app:scroll_selected_item_text_color="#FFC107" />
 
 
-<!--        app:scroll_selected_item_background="#000000"-->
-<!--        app:scroll_item_text_color="#f5f5f5"-->
-<!--        app:scroll_atmospheric="true"-->
-<!--        app:scroll_indicator="true"-->
-<!--        app:scroll_indicator_color="#000000"-->
-<!--        app:scroll_item_align="center"-->
-<!--        app:scroll_selected_item_text_color="?attr/colorPrimary"-->
-<!--        app:scroll_item_text_size="17sp"-->
-<!--        app:scroll_indicator_size="1dp"-->
+        <!--        app:scroll_selected_item_background="#000000"-->
+        <!--        app:scroll_item_text_color="#f5f5f5"-->
+        <!--        app:scroll_atmospheric="true"-->
+        <!--        app:scroll_indicator="true"-->
+        <!--        app:scroll_indicator_color="#000000"-->
+        <!--        app:scroll_item_align="center"-->
+        <!--        app:scroll_selected_item_text_color="?attr/colorPrimary"-->
+        <!--        app:scroll_item_text_size="17sp"-->
+        <!--        app:scroll_indicator_size="1dp"-->
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -84,23 +129,38 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.32999998">
 
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <TextView
+                android:id="@+id/textMonthOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/josefin_sans_thin"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Month overview"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
             <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/barChart"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="380dp"
                 android:fontFamily="@font/josefin_sans_semibold" />
 
             <!--            <com.github.mikephil.charting.charts.BarChart-->
@@ -108,60 +168,31 @@
             <!--                android:layout_width="match_parent"-->
             <!--                android:layout_height="400dp" />-->
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/josefin_sans_thin"
+                android:text="Sum overview"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal|center_vertical"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/sumChart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="10dp" >
+
+            </com.github.mikephil.charting.charts.BarChart>
+
+
         </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/viewAllResultsButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
-        android:text="View all"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-
-        android:fontFamily="@font/josefin_sans_semibold"
-        android:textColor="#D5252525"
-        android:background="@color/white"
-        />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginLeft="108dp"
-        android:layout_marginBottom="16dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/viewAllResultsButton"
-        android:fontFamily="@font/josefin_sans_semibold"
-        android:textColor="#D5252525"
-        />
-
-    <TextView
-        android:id="@+id/textYear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        android:fontFamily="@font/josefin_sans_thin"
-        android:gravity="center_horizontal"
-        android:text="TextView"
-        android:textAllCaps="true"
-        android:textColor="#D5252525"
-        android:textSize="24sp"
-        android:textStyle="bold"
-
-        app:layout_constraintEnd_toStartOf="@+id/right_nav"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/left_nav"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

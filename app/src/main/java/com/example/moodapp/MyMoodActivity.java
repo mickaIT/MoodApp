@@ -36,15 +36,15 @@ public class MyMoodActivity extends AppCompatActivity {
     SeekBar poorDecisionsSeekBar;
 
     SeekBar.OnSeekBarChangeListener mlistener;
-    int zeroValue=5;
-    Integer talkativenessValue=5;
-    Integer insomniaValue=5;
-    Integer flightOfIdeasValue=5;
-    Integer tirednessValue=5;
-    Integer hyperactivityValue=5;
-    Integer irritabilityValue=5;
-    Integer megalomaniaValue=5;
-    Integer poorDecisionsValue=5;
+    int zeroValue=5; //diff to <-5,5>range
+    Integer talkativenessValue=0;
+    Integer insomniaValue=0;
+    Integer flightOfIdeasValue=0;
+    Integer tirednessValue=0;
+    Integer hyperactivityValue=0;
+    Integer irritabilityValue=0;
+    Integer megalomaniaValue=0;
+    Integer poorDecisionsValue=0;
 
     //=======================================DATAABSE===================
 

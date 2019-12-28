@@ -122,7 +122,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         Cursor cursor=db.rawQuery(query,null);
         cursor.close();
-        ResultsActivity.textView.setText("dupa");
+//        ResultsActivity.textView.setText("dupa");
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Calendar myCalendar = new GregorianCalendar(2019, 10, 11) {
         };
@@ -145,7 +145,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public ArrayList<String> queryXData(int month, int year){
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<String> xData= new ArrayList<>();
-        String query="SELECT "+ "strftime('%m/%d', DATE)" +" FROM "+TABLE_NAME+" WHERE"+
+        String query="SELECT "+ "strftime('%d/%H:%M', DATE)" +" FROM "+TABLE_NAME+" WHERE"+
                 " strftime('%m', DATE)='"+(month)+
                 "' AND strftime('%Y', DATE)='"+(year)+"'";
         Cursor cursor=db.rawQuery(query,null);
@@ -359,6 +359,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         while(cursor.moveToNext()){
             yData.add(cursor.getString(0));
+//            talkativenessData.add(cursor.getInt(0));
+//            talkativenessData.add(0);
+
+        }
+        cursor.close();
+        return yData;
+    }
+
+    public ArrayList<Float> querySumData(int month, int year){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ArrayList<Float> yData=new ArrayList<Float>();
+//
+        String query="SELECT "+SYMPTHOM_1+" FROM "+TABLE_NAME+" WHERE"+
+                " strftime('%m', DATE)='"+(month)+
+                "' AND strftime('%Y', DATE)='"+(year)+"'";
+        //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
+        Cursor cursor=db.rawQuery(query,null);
+
+//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+
+        while(cursor.moveToNext()){
+            yData.add(cursor.getFloat(0));
 //            talkativenessData.add(cursor.getInt(0));
 //            talkativenessData.add(0);
 
