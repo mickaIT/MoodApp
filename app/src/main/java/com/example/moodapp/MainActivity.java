@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     static DatabaseHelper myDb;
 static SQLiteDatabase sqLiteDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
