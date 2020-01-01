@@ -197,7 +197,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:fontFamily="@font/josefin_sans_thin"
-                android:text="@string/sympthom_1"
+                android:text="@string/symptom_1"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal|center_vertical"/>
@@ -218,7 +218,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:fontFamily="@font/josefin_sans_thin"
-                android:text="@string/sympthom_2"
+                android:text="@string/symptom_2"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal|center_vertical"/>
@@ -238,7 +238,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:fontFamily="@font/josefin_sans_thin"
-                android:text="@string/sympthom_3"
+                android:text="@string/symptom_3"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal|center_vertical"/>
@@ -256,7 +256,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:fontFamily="@font/josefin_sans_thin"
-                android:text="@string/sympthom_4"
+                android:text="@string/symptom_4"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal|center_vertical"/>
@@ -274,7 +274,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:fontFamily="@font/josefin_sans_thin"
-                android:text="@string/sympthom_5"
+                android:text="@string/symptom_5"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal|center_vertical"/>
@@ -292,7 +292,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:fontFamily="@font/josefin_sans_thin"
-                android:text="@string/sympthom_6"
+                android:text="@string/symptom_6"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal|center_vertical"/>
@@ -310,7 +310,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:fontFamily="@font/josefin_sans_thin"
-                android:text="@string/sympthom_7"
+                android:text="@string/symptom_7"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal|center_vertical"/>
@@ -328,7 +328,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:fontFamily="@font/josefin_sans_thin"
-                android:text="@string/sympthom_8"
+                android:text="@string/symptom_8"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal|center_vertical"/>

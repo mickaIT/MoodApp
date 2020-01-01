@@ -43,7 +43,6 @@ public class ResultsActivity extends AppCompatActivity {
     int currentMonth = today.getMonthValue();
     int currentYear = today.getYear();
 
-    TextView test;
     Button viewAllResultsButton;
     Button buttonPieChart;
     BarChart stackedBarChart;
@@ -55,7 +54,7 @@ public class ResultsActivity extends AppCompatActivity {
     ImageButton buttonLeft;
     static int mBackgroundColor;
     private LineChart[] lineCharts = new LineChart[8]; //ilość linechartsów
-    final ArrayList<String>[] sympthoms=(ArrayList<String>[]) new ArrayList[lineCharts.length];
+    final ArrayList<String>[] sympthoms=(ArrayList<String>[]) new ArrayList[lineCharts.length];;
 
     int[] colorsArr = new int[]{Color.rgb(235, 140, 52),
             Color.rgb(52, 168, 235),
@@ -66,6 +65,16 @@ public class ResultsActivity extends AppCompatActivity {
             Color.rgb(255, 166, 195),
             Color.rgb(42, 109, 130)};
 
+    String[] labels = new String[]{
+            Constants.SYMPTOM_1,
+            Constants.SYMPTOM_2,
+            Constants.SYMPTOM_3,
+            Constants.SYMPTOM_4,
+            Constants.SYMPTOM_5,
+            Constants.SYMPTOM_6,
+            Constants.SYMPTOM_7,
+            Constants.SYMPTOM_8};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,13 +83,13 @@ public class ResultsActivity extends AppCompatActivity {
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        MainActivity.myDb.addTestData();
         initializeViews();
         //load sympthoms (improve efficency)
-MainActivity.myDb.addTestData();
+
         setSympthomsData(sympthoms,currentMonth,currentYear);
 
         drawStackedBarChart(currentMonth,currentYear);
-
         drawBarChart(currentMonth,currentYear);
         drawLineCharts(currentMonth,currentYear);
 
@@ -99,7 +108,6 @@ MainActivity.myDb.addTestData();
 
                 drawBarChart(currentMonth,currentYear);
                 drawStackedBarChart(currentMonth,currentYear);
-
                 drawLineCharts(currentMonth,currentYear);
 
             }
@@ -113,9 +121,6 @@ MainActivity.myDb.addTestData();
                 textYear.setText(Integer.toString(currentYear));
 
                 setSympthomsData(sympthoms,currentMonth,currentYear);
-
-
-
                 stackedBarChart.clear();
                 barChart.clear();
                 clearLineCharts();
@@ -135,18 +140,9 @@ MainActivity.myDb.addTestData();
 
                 setSympthomsData(sympthoms,currentMonth,currentYear);
 
-                //TEST
-
-                //END TEST
-
                 stackedBarChart.clear();
                 barChart.clear();
                 clearLineCharts();
-
-
-                //TEST
-                test.setText(Integer.toString(currentMonth));
-                //END TEST
 
                 drawStackedBarChart(currentMonth,currentYear);
                 drawBarChart(currentMonth,currentYear);
@@ -171,8 +167,6 @@ MainActivity.myDb.addTestData();
     }
 
     private void initializeViews(){
-
-        test=(TextView)findViewById(R.id.testTxt);
 
         barChart = (BarChart) findViewById(R.id.sumChart);
         viewAllResultsButton=(Button) findViewById(R.id.buttonViewAllResults);
@@ -215,20 +209,16 @@ MainActivity.myDb.addTestData();
         }
     }
     public void drawStackedBarChart(int month,int year) {
+
         //yVals CHART VALUES
         final ArrayList<BarEntry> yVals = new ArrayList<BarEntry>();
         //xVals SQLite VALUES
         final ArrayList<String> xData = MainActivity.myDb.queryXData(month, year);
 
         //yVals SQLite VALUES
-        final ArrayList<String> sympthom_1_data = MainActivity.myDb.querySympthom_1_Data(month, year);
-        final ArrayList<String> sympthom_2_data = MainActivity.myDb.querySympthom_2_Data(month, year);
-        final ArrayList<String> sympthom_3_data = MainActivity.myDb.querySympthom_3_Data(month, year);
-        final ArrayList<String> sympthom_4_data = MainActivity.myDb.querySympthom_4_Data(month, year);
-        final ArrayList<String> sympthom_5_data = MainActivity.myDb.querySympthom_5_Data(month, year);
-        final ArrayList<String> sympthom_6_data = MainActivity.myDb.querySympthom_6_Data(month, year);
-        final ArrayList<String> sympthom_7_data = MainActivity.myDb.querySympthom_7_Data(month, year);
-        final ArrayList<String> sympthom_8_data = MainActivity.myDb.querySympthom_8_Data(month, year);
+//        ArrayList<String>[] sympthoms=sympthomsData(month,year,sympthoms);
+
+//        sympthomsData(sympthoms,month,year);
 
         if (xData.isEmpty()) {
             return;
@@ -236,14 +226,16 @@ MainActivity.myDb.addTestData();
 
             //addind BarEtries to Y-values
             for (int i = 0; i < xData.size(); i++) {
-                BarEntry barEntry = new BarEntry(i, new float[]{Float.parseFloat(sympthom_1_data.get(i)),
-                        Float.parseFloat(sympthom_2_data.get(i)),
-                        Float.parseFloat(sympthom_3_data.get(i)),
-                        Float.parseFloat(sympthom_4_data.get(i)),
-                        Float.parseFloat(sympthom_5_data.get(i)),
-                        Float.parseFloat(sympthom_6_data.get(i)),
-                        Float.parseFloat(sympthom_7_data.get(i)),
-                        Float.parseFloat(sympthom_8_data.get(i))});
+                BarEntry barEntry = new BarEntry(i, new float[]{
+                            Float.parseFloat(sympthoms[0].get(i)),
+                            Float.parseFloat(sympthoms[1].get(i)),
+                            Float.parseFloat(sympthoms[2].get(i)),
+                            Float.parseFloat(sympthoms[3].get(i)),
+                            Float.parseFloat(sympthoms[4].get(i)),
+                            Float.parseFloat(sympthoms[5].get(i)),
+                            Float.parseFloat(sympthoms[6].get(i)),
+                            Float.parseFloat(sympthoms[7].get(i))});
+
                 yVals.add(barEntry);
             }
 
@@ -261,26 +253,20 @@ MainActivity.myDb.addTestData();
             BarDataSet dataSet = new BarDataSet(yVals, "Bar Chart");
             //additionals
             dataSet.setDrawIcons(false);
-            dataSet.setStackLabels(new String[]{
-                    "Talkativeness",
-                    "Insomnia",
-                    "Flight of ideas",
-                    "Tiredness",
-                    "Hyperactivity",
-                    "Irritability",
-                    "Megalomania",
-                    "Poor decisions"});
+            dataSet.setStackLabels(labels);
 
             stackedBarChart.getLegend().setWordWrapEnabled(true);
-            //joyful colors returns a tab[] of color values
-            int[] colorsArr = new int[]{Color.rgb(235, 140, 52),
-                    Color.rgb(52, 168, 235),
-                    Color.rgb(210, 150, 255),
-                    Color.rgb(255, 246, 77),
-                    Color.rgb(61, 139, 255),
-                    Color.rgb(52, 153, 76),
-                    Color.rgb(255, 166, 195),
-                    Color.rgb(42, 109, 130)};
+
+//            //joyful colors returns a tab[] of color values
+//            int[] colorsArr = new int[]{Color.rgb(235, 140, 52),
+//                    Color.rgb(52, 168, 235),
+//                    Color.rgb(210, 150, 255),
+//                    Color.rgb(255, 246, 77),
+//                    Color.rgb(61, 139, 255),
+//                    Color.rgb(52, 153, 76),
+//                    Color.rgb(255, 166, 195),
+//                    Color.rgb(42, 109, 130)};
+
 //                Color.GRAY, Color.CYAN, Color.YELLOW, Color.DKGRAY, Color.RED, Color.MAGENTA, Color.BLACK};
 //        dataSet.setColors(ColorTemplate.JOYFUL_COLORS);
             dataSet.setColors(colorsArr);
@@ -329,16 +315,6 @@ MainActivity.myDb.addTestData();
 
             mVals.add(new BarEntry(i,floatVals[i]));
         }
-
-        String[] labels = new String[]{
-                "Talkativeness",
-                "Insomnia",
-                "Flight of ideas",
-                "Tiredness",
-                "Hyperactivity",
-                "Irritability",
-                "Megalomania",
-                "Poor decisions"};
 
         //set of Bar values
         BarDataSet set;

@@ -25,14 +25,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME="MyMoods_table";
     public static final String ID="ID";
     public static final String DATE="DATE";
-    public static final String SYMPTHOM_1="TALKATIVENESS";
-    public static final String SYMPTHOM_2="INSOMNIA";
-    public static final String SYMPTHOM_3="FLIGHT_OF_IDEAS";
-    public static final String SYMPTHOM_4="TIREDNESS";
-    public static final String SYMPTHOM_5="HYPERACTIVITY";
-    public static final String SYMPTHOM_6="IRRITABILITY";
-    public static final String SYMPTHOM_7="MEGALOMANIA";
-    public static final String SYMPTHOM_8="POOR_DECISIONS";
+    public static final String SYMPTHOM_1="SYMPTHOM_1";
+    public static final String SYMPTHOM_2="SYMPTHOM_2";
+    public static final String SYMPTHOM_3="SYMPTHOM_3";
+    public static final String SYMPTHOM_4="SYMPTHOM_4";
+    public static final String SYMPTHOM_5="SYMPTHOM_5";
+    public static final String SYMPTHOM_6="SYMPTHOM_6";
+    public static final String SYMPTHOM_7="SYMPTHOM_7";
+    public static final String SYMPTHOM_8="SYMPTHOM_8";
 
 
     public DatabaseHelper(@Nullable Context context) {
@@ -44,14 +44,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("create table " + TABLE_NAME +" " +
                 "(ID INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "DATE DATETIME DEFAULT CURRENT_TIMESTAMP," +
-                "TALKATIVENESS INTEGER," +
-                "INSOMNIA INTEGER," +
-                "FLIGHT_OF_IDEAS INTEGER," +
-                "TIREDNESS INTEGER," +
-                "HYPERACTIVITY INTEGER," +
-                "IRRITABILITY INTEGER," +
-                "MEGALOMANIA INTEGER," +
-                "POOR_DECISIONS INTEGER)");
+                "SYMPTHOM_1 INTEGER," +
+                "SYMPTHOM_2 INTEGER," +
+                "SYMPTHOM_3 INTEGER," +
+                "SYMPTHOM_4 INTEGER," +
+                "SYMPTHOM_5 INTEGER," +
+                "SYMPTHOM_6 INTEGER," +
+                "SYMPTHOM_7 INTEGER," +
+                "SYMPTHOM_8 INTEGER)");
     }
 
     @Override
@@ -60,24 +60,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData( Integer talkativeness, Integer insomnia, Integer flightOfIdeas, Integer tiredness,
-                               Integer hyperactivity, Integer irritability, Integer megalomania, Integer poorDecisions){
+    public boolean insertData( Integer symptom_1, Integer symptom_2, Integer symptom_3, Integer symptom_4,
+                               Integer symptom_5, Integer symptom_6, Integer symptom_7, Integer symptom_8){
 
         SQLiteDatabase db = this.getWritableDatabase();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         Date date = new Date();
-//        ContentValues initialValues = new ContentValues();
-//        long rowId = db.insert(TABLE_NAME, null, initialValues);
+
         ContentValues contentValues = new ContentValues();
         contentValues.put(DATE, dateFormat.format(date));
-        contentValues.put(SYMPTHOM_1,talkativeness);
-        contentValues.put(SYMPTHOM_2,insomnia);
-        contentValues.put(SYMPTHOM_3,flightOfIdeas);
-        contentValues.put(SYMPTHOM_4,tiredness);
-        contentValues.put(SYMPTHOM_5,hyperactivity);
-        contentValues.put(SYMPTHOM_6,irritability);
-        contentValues.put(SYMPTHOM_7,megalomania);
-        contentValues.put(SYMPTHOM_8,poorDecisions);
+        contentValues.put(SYMPTHOM_1,symptom_1);
+        contentValues.put(SYMPTHOM_2,symptom_2);
+        contentValues.put(SYMPTHOM_3,symptom_3);
+        contentValues.put(SYMPTHOM_4,symptom_4);
+        contentValues.put(SYMPTHOM_5,symptom_5);
+        contentValues.put(SYMPTHOM_6,symptom_6);
+        contentValues.put(SYMPTHOM_7,symptom_7);
+        contentValues.put(SYMPTHOM_8,symptom_8);
         long result=db.insert(TABLE_NAME,null,contentValues);
 
         if (result==-1){
@@ -118,17 +117,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void addTestData(){
         SQLiteDatabase db=this.getWritableDatabase();
-        String query="INSERT INTO "+TABLE_NAME+ " (DATE, TALKATIVENESS, INSOMNIA, FLIGHT_OF_IDEAS, TIREDNESS, HYPERACTIVITY, IRRITABILITY, MEGALOMANIA, POOR_DECISIONS)" + " VALUES (NULL, 2019/11/10,5,3,-4,3,3,-4,2)";
+        String query="INSERT INTO "+TABLE_NAME+ " (DATE, SYMPTHOM_1, SYMPTHOM_2, SYMPTHOM_3, SYMPTHOM_4, SYMPTHOM_5, SYMPTHOM_6, SYMPTHOM_7, SYMPTHOM_8)" + " VALUES (NULL, 2019/11/10,5,3,-4,3,3,-4,2)";
 
         Cursor cursor=db.rawQuery(query,null);
         cursor.close();
-//        ResultsActivity.textView.setText("dupa");
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-M-d");
-        Calendar myCalendar = new GregorianCalendar(2020, 3, 11) {
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar myCalendar = new GregorianCalendar(2019, 10, 11) {
         };
         Date date = myCalendar.getTime();
-//        ContentValues initialValues = new ContentValues();
-//        long rowId = db.insert(TABLE_NAME, null, initialValues);
+
         ContentValues contentValues = new ContentValues();
         contentValues.put(DATE, dateFormat.format(date));
         contentValues.put(SYMPTHOM_1,5);
@@ -149,7 +147,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " strftime('%m', DATE)='"+(month)+
                 "' AND strftime('%Y', DATE)='"+(year)+"'";
         Cursor cursor=db.rawQuery(query,null);
-//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+
         while(cursor.moveToNext()){
 
              xData.add(cursor.getString(0));
@@ -163,9 +161,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ArrayList<String> xData= new ArrayList<>();
 
         String query="SELECT "+ "strftime('%m', DATE)" +" FROM "+TABLE_NAME+" WHERE"+ " strftime('%m', DATE)='"+intMonth+"'";
-        //+ " GROUP BY "+DATE;
+
         Cursor cursor=db.rawQuery(query,null);
-//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+
         while(cursor.moveToNext()){
 
             xData.add(cursor.getString(0));
@@ -181,7 +179,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String query="SELECT "+ "strftime('%m', DATE)" +" FROM "+TABLE_NAME+" WHERE"+ " strftime('%m', DATE)='12'";
         //+ " GROUP BY "+DATE;
         Cursor cursor=db.rawQuery(query,null);
-//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+
         while(cursor.moveToNext()){
 
             xData.add(cursor.getString(0));
@@ -201,12 +199,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
-//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
-
         while(cursor.moveToNext()){
             yData.add(cursor.getString(0));
-//            talkativenessData.add(cursor.getInt(0));
-//            talkativenessData.add(0);
 
         }
         cursor.close();
@@ -223,12 +217,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
-//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
-
         while(cursor.moveToNext()){
             yData.add(cursor.getString(0));
-//            talkativenessData.add(cursor.getInt(0));
-//            talkativenessData.add(0);
+
 
         }
         cursor.close();
@@ -245,12 +236,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
-//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
-
         while(cursor.moveToNext()){
             yData.add(cursor.getString(0));
-//            talkativenessData.add(cursor.getInt(0));
-//            talkativenessData.add(0);
 
         }
         cursor.close();
@@ -267,14 +254,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
-//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
-
         while(cursor.moveToNext()){
             yData.add(cursor.getString(0));
-//            talkativenessData.add(cursor.getInt(0));
-//            talkativenessData.add(0);
-
         }
+
         cursor.close();
         return yData;
     }
@@ -289,12 +272,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
-//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
-
         while(cursor.moveToNext()){
             yData.add(cursor.getString(0));
-//            talkativenessData.add(cursor.getInt(0));
-//            talkativenessData.add(0);
 
         }
         cursor.close();
@@ -311,13 +290,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
-//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
-
         while(cursor.moveToNext()){
             yData.add(cursor.getString(0));
-//            talkativenessData.add(cursor.getInt(0));
-//            talkativenessData.add(0);
-
         }
         cursor.close();
         return yData;
@@ -333,12 +307,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
-//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
-
         while(cursor.moveToNext()){
             yData.add(cursor.getString(0));
-//            talkativenessData.add(cursor.getInt(0));
-//            talkativenessData.add(0);
+
 
         }
         cursor.close();
@@ -352,15 +323,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String query="SELECT "+SYMPTHOM_8+" FROM "+TABLE_NAME+" WHERE"+
                 " strftime('%m', DATE)='"+(month)+
                 "' AND strftime('%Y', DATE)='"+(year)+"'";
-        //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
-//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
 
         while(cursor.moveToNext()){
             yData.add(cursor.getString(0));
-//            talkativenessData.add(cursor.getInt(0));
-//            talkativenessData.add(0);
+
 
         }
         cursor.close();
@@ -370,19 +338,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public ArrayList<Float> querySumData(int month, int year){
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<Float> yData=new ArrayList<Float>();
-//
+
         String query="SELECT "+SYMPTHOM_1+" FROM "+TABLE_NAME+" WHERE"+
                 " strftime('%m', DATE)='"+(month)+
                 "' AND strftime('%Y', DATE)='"+(year)+"'";
-        //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
-        Cursor cursor=db.rawQuery(query,null);
 
-//        for(cursor.moveToFirst();cursor.moveToLast();cursor.moveToNext()){
+        Cursor cursor=db.rawQuery(query,null);
 
         while(cursor.moveToNext()){
             yData.add(cursor.getFloat(0));
-//            talkativenessData.add(cursor.getInt(0));
-//            talkativenessData.add(0);
 
         }
         cursor.close();

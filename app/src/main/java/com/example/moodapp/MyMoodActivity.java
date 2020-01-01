@@ -11,40 +11,40 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MyMoodActivity extends AppCompatActivity {
 
-    TextView talkativenessTxt;
-    SeekBar talkativenessSeekBar;
+    TextView symptomTxt_1;
+    SeekBar seekBar_1;
 
-    TextView insomniaTxt;
-    SeekBar insomniaSeekBar;
+    TextView symptomTxt_2;
+    SeekBar seekBar_2;
 
-    TextView flightOfIdeasTxt;
-    SeekBar flightOfIdeasSeekBar;
+    TextView symptomTxt_3;
+    SeekBar seekBar_3;
 
-    TextView tirednessTxt;
-    SeekBar tirednessSeekBar;
+    TextView symptomTxt_4;
+    SeekBar seekBar_4;
 
-    TextView hyperActivityTxt;
-    SeekBar hyperactivitySeekBar;
+    TextView symptomTxt_5;
+    SeekBar seekBar_5;
 
-    TextView inrritabilityTxt;
-    SeekBar irritabilitySeekBar;
+    TextView symptomTxt_6;
+    SeekBar seekBar_6;
 
-    TextView megalomaniaTxt;
-    SeekBar megalomaniaSeekBar;
+    TextView symptomTxt_7;
+    SeekBar seekBar_7;
 
-    TextView poorDecisionsTxt;
-    SeekBar poorDecisionsSeekBar;
+    TextView symptomTxt_8;
+    SeekBar seekBar_8;
 
     SeekBar.OnSeekBarChangeListener mlistener;
     int zeroValue=5; //diff to <-5,5>range
-    Integer talkativenessValue=0;
-    Integer insomniaValue=0;
-    Integer flightOfIdeasValue=0;
-    Integer tirednessValue=0;
-    Integer hyperactivityValue=0;
-    Integer irritabilityValue=0;
-    Integer megalomaniaValue=0;
-    Integer poorDecisionsValue=0;
+    Integer symptomVal_1=0;
+    Integer symptomVal_2=0;
+    Integer symptomVal_3=0;
+    Integer symptomVal_4=0;
+    Integer symptomVal_5=0;
+    Integer symptomVal_6=0;
+    Integer symptomVal_7=0;
+    Integer symptomVal_8=0;
 
     //=======================================DATAABSE===================
 
@@ -65,37 +65,37 @@ public class MyMoodActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 switch (seekBar.getId()) {
-                    case R.id.talkativenessSeekBar:
-                        talkativenessValue=(Integer)progress-zeroValue;
+                    case R.id.seekBar_1:
+                        symptomVal_1=(Integer)progress-zeroValue;
                         break;
 
-                    case R.id.insomniaSeekBar:
-                        insomniaValue=(Integer)progress-zeroValue;
+                    case R.id.seekBar_2:
+                        symptomVal_2=(Integer)progress-zeroValue;
                         AddData();
 
                         break;
-                    case R.id.flightOfIdeasSeekBar:
-                        flightOfIdeasValue=(Integer)progress-zeroValue;
+                    case R.id.seekBar_3:
+                        symptomVal_3=(Integer)progress-zeroValue;
 
                         break;
-                    case R.id.tirednessSeekBar:
-                        tirednessValue=(Integer)progress-zeroValue;
+                    case R.id.seekBar_4:
+                        symptomVal_4=(Integer)progress-zeroValue;
 
                         break;
-                    case R.id.hyperactivitySeekBar:
-                        hyperactivityValue=(Integer)progress-zeroValue;
+                    case R.id.seekBar_5:
+                        symptomVal_5=(Integer)progress-zeroValue;
                         break;
 
-                    case R.id.irritabilitySeekBar:
-                        irritabilityValue=(Integer)progress-zeroValue;
+                    case R.id.seekBar_6:
+                        symptomVal_6=(Integer)progress-zeroValue;
                         break;
 
-                    case R.id.poorDecisionsSeekBar:
-                        poorDecisionsValue=(Integer)progress-zeroValue;
+                    case R.id.seekBar_7:
+                        symptomVal_7=(Integer)progress-zeroValue;
                         break;
 
-                    case R.id.megalomaniaSeekBar:
-                        megalomaniaValue=(Integer)progress-zeroValue;
+                    case R.id.seekBar_8:
+                        symptomVal_8=(Integer)progress-zeroValue;
                         break;
                 }
             }
@@ -113,14 +113,14 @@ public class MyMoodActivity extends AppCompatActivity {
 
         //----------------ODŚWIEŻAM DANE SEEKBARÓW---------------------------------
 
-        talkativenessSeekBar.setOnSeekBarChangeListener(mlistener);
-        insomniaSeekBar.setOnSeekBarChangeListener(mlistener);
-        flightOfIdeasSeekBar.setOnSeekBarChangeListener(mlistener);
-        tirednessSeekBar.setOnSeekBarChangeListener(mlistener);
-        hyperactivitySeekBar.setOnSeekBarChangeListener(mlistener);
-        irritabilitySeekBar.setOnSeekBarChangeListener(mlistener);
-        poorDecisionsSeekBar.setOnSeekBarChangeListener(mlistener);
-        megalomaniaSeekBar.setOnSeekBarChangeListener(mlistener);
+        seekBar_1.setOnSeekBarChangeListener(mlistener);
+        seekBar_2.setOnSeekBarChangeListener(mlistener);
+        seekBar_3.setOnSeekBarChangeListener(mlistener);
+        seekBar_4.setOnSeekBarChangeListener(mlistener);
+        seekBar_5.setOnSeekBarChangeListener(mlistener);
+        seekBar_6.setOnSeekBarChangeListener(mlistener);
+        seekBar_8.setOnSeekBarChangeListener(mlistener);
+        seekBar_7.setOnSeekBarChangeListener(mlistener);
 
         AddData();
     }
@@ -131,15 +131,15 @@ public class MyMoodActivity extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isInserted = MainActivity.myDb.insertData(talkativenessValue,
-                                insomniaValue,
-                                flightOfIdeasValue,
-                                tirednessValue,
-                                hyperactivityValue,
-                                irritabilityValue,
-                                megalomaniaValue,
-                                poorDecisionsValue);
-//                        textView11.setText(String.valueOf(flightOfIdeasValue));
+                        boolean isInserted = MainActivity.myDb.insertData(symptomVal_1,
+                                symptomVal_2,
+                                symptomVal_3,
+                                symptomVal_4,
+                                symptomVal_5,
+                                symptomVal_6,
+                                symptomVal_7,
+                                symptomVal_8);
+//                        textView11.setText(String.valueOf(symptomVal_3));
                         if(isInserted == true)
                             Toast.makeText(MyMoodActivity.this,"Data Inserted",Toast.LENGTH_LONG).show();
                         else
@@ -150,23 +150,23 @@ public class MyMoodActivity extends AppCompatActivity {
     }
 
     private void initViews(){
-        talkativenessTxt=(TextView) findViewById(R.id.talkativenessTxt);
-        insomniaTxt=(TextView) findViewById(R.id.insomniaTxt);
-        flightOfIdeasTxt=(TextView) findViewById(R.id.flightOfIdeasTxt);
-        tirednessTxt=(TextView) findViewById(R.id.tirednessTxt);
-        hyperActivityTxt=(TextView) findViewById(R.id.hyperActivityTxt);
-        inrritabilityTxt=(TextView) findViewById(R.id.inrritabilityTxt);
-        megalomaniaTxt=(TextView) findViewById(R.id.megalomaniaTxt);
-        poorDecisionsTxt=(TextView) findViewById(R.id.poorDecisionsTxt);
+        symptomTxt_1=(TextView) findViewById(R.id.symptomTxt_1);
+        symptomTxt_2=(TextView) findViewById(R.id.symptomTxt_2);
+        symptomTxt_3=(TextView) findViewById(R.id.symptomTxt_3);
+        symptomTxt_4=(TextView) findViewById(R.id.symptomTxt_4);
+        symptomTxt_5=(TextView) findViewById(R.id.symptomTxt_5);
+        symptomTxt_6=(TextView) findViewById(R.id.symptomTxt_6);
+        symptomTxt_7=(TextView) findViewById(R.id.symptomTxt_7);
+        symptomTxt_8=(TextView) findViewById(R.id.symptomTxt_8);
 
-        talkativenessSeekBar=(SeekBar) findViewById(R.id.talkativenessSeekBar);
-        insomniaSeekBar=(SeekBar) findViewById(R.id.insomniaSeekBar);
-        flightOfIdeasSeekBar=(SeekBar) findViewById(R.id.flightOfIdeasSeekBar);
-        tirednessSeekBar=(SeekBar) findViewById(R.id.tirednessSeekBar);
-        hyperactivitySeekBar=(SeekBar) findViewById(R.id.hyperactivitySeekBar);
-        irritabilitySeekBar=(SeekBar) findViewById(R.id.irritabilitySeekBar);
-        poorDecisionsSeekBar=(SeekBar) findViewById(R.id.poorDecisionsSeekBar);
-        megalomaniaSeekBar=(SeekBar) findViewById(R.id.megalomaniaSeekBar);
+        seekBar_1=(SeekBar) findViewById(R.id.seekBar_1);
+        seekBar_2=(SeekBar) findViewById(R.id.seekBar_2);
+        seekBar_3=(SeekBar) findViewById(R.id.seekBar_3);
+        seekBar_4=(SeekBar) findViewById(R.id.seekBar_4);
+        seekBar_5=(SeekBar) findViewById(R.id.seekBar_5);
+        seekBar_6=(SeekBar) findViewById(R.id.seekBar_6);
+        seekBar_8=(SeekBar) findViewById(R.id.seekBar_7);
+        seekBar_7=(SeekBar) findViewById(R.id.seekBar_8);
 
     }
 

@@ -39,8 +39,8 @@
 
 
         android:textAllCaps="true"
-        android:textColor="#9426b5"
-        android:textSize="50sp"
+        android:textColor="#5A226D"
+        android:textSize="36sp"
         android:textStyle="bold"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,11 +66,11 @@
             android:orientation="vertical">
 
             <SeekBar
-                android:id="@+id/talkativenessSeekBar"
+                android:id="@+id/seekBar_1"
                 style="@android:style/Widget.Material.SeekBar.Discrete"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/talkativenessTxt"
+                android:layout_alignTop="@+id/symptomTxt_1"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="0dp"
@@ -85,11 +85,11 @@
                 />
 
             <SeekBar
-                android:id="@+id/insomniaSeekBar"
+                android:id="@+id/seekBar_2"
                 style="@android:style/Widget.Material.SeekBar.Discrete"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/insomniaTxt"
+                android:layout_alignTop="@+id/symptomTxt_2"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="0dp"
@@ -103,11 +103,11 @@
                 />
 
             <SeekBar
-                android:id="@+id/flightOfIdeasSeekBar"
+                android:id="@+id/seekBar_3"
                 style="@android:style/Widget.Material.SeekBar.Discrete"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/flightOfIdeasTxt"
+                android:layout_alignTop="@+id/symptomTxt_3"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="0dp"
@@ -120,11 +120,11 @@
                 />
 
             <SeekBar
-                android:id="@+id/tirednessSeekBar"
+                android:id="@+id/seekBar_4"
                 style="@android:style/Widget.Material.SeekBar.Discrete"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/tirednessTxt"
+                android:layout_alignTop="@+id/symptomTxt_4"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="0dp"
@@ -137,11 +137,11 @@
                 />
 
             <SeekBar
-                android:id="@+id/hyperactivitySeekBar"
+                android:id="@+id/seekBar_5"
                 style="@android:style/Widget.Material.SeekBar.Discrete"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/hyperActivityTxt"
+                android:layout_alignTop="@+id/symptomTxt_5"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="0dp"
@@ -154,11 +154,11 @@
                 />
 
             <SeekBar
-                android:id="@+id/irritabilitySeekBar"
+                android:id="@+id/seekBar_6"
                 style="@android:style/Widget.Material.SeekBar.Discrete"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/inrritabilityTxt"
+                android:layout_alignTop="@+id/symptomTxt_6"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="0dp"
@@ -171,11 +171,11 @@
                 />
 
             <SeekBar
-                android:id="@+id/megalomaniaSeekBar"
+                android:id="@+id/seekBar_7"
                 style="@android:style/Widget.Material.SeekBar.Discrete"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/megalomaniaTxt"
+                android:layout_alignTop="@+id/symptomTxt_7"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="0dp"
@@ -188,11 +188,11 @@
                 />
 
             <SeekBar
-                android:id="@+id/poorDecisionsSeekBar"
+                android:id="@+id/seekBar_8"
                 style="@android:style/Widget.Material.SeekBar.Discrete"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/poorDecisionsTxt"
+                android:layout_alignTop="@+id/symptomTxt_8"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="0dp"
@@ -206,141 +206,141 @@
                 />
 
             <TextView
-                android:id="@+id/poorDecisionsTxt"
+                android:id="@+id/symptomTxt_8"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/megalomaniaTxt"
+                android:layout_below="@+id/symptomTxt_7"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="18dp"
                 android:layout_marginLeft="11dp"
                 android:layout_marginTop="20dp"
-                android:text="Poor decisions"
-                tools:layout_alignParentRight="true"
                 android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/symptom_1"
                 android:textColor="#D5252525"
-                android:textStyle="bold"
                 android:textSize="18sp"
+                android:textStyle="bold"
+                tools:layout_alignParentRight="true"
 
                 />
 
             <TextView
-                android:id="@+id/inrritabilityTxt"
+                android:id="@+id/symptomTxt_6"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/hyperActivityTxt"
+                android:layout_below="@+id/symptomTxt_5"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="18dp"
                 android:layout_marginLeft="14dp"
                 android:layout_marginTop="20dp"
-                android:text="Irritability"
                 android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/symptom_6"
                 android:textColor="#D5252525"
-                android:textStyle="bold"
                 android:textSize="18sp"
+                android:textStyle="bold"
 
                 />
 
             <TextView
-                android:id="@+id/megalomaniaTxt"
+                android:id="@+id/symptomTxt_7"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/inrritabilityTxt"
+                android:layout_below="@+id/symptomTxt_6"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="18dp"
                 android:layout_marginLeft="11dp"
                 android:layout_marginTop="20dp"
-                android:text="Megalomania"
-                tools:layout_alignParentRight="true"
                 android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/symptom_7"
                 android:textColor="#D5252525"
-                android:textStyle="bold"
                 android:textSize="18sp"
+                android:textStyle="bold"
+                tools:layout_alignParentRight="true"
 
                 />
 
             <TextView
-                android:id="@+id/tirednessTxt"
+                android:id="@+id/symptomTxt_4"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/flightOfIdeasTxt"
+                android:layout_below="@+id/symptomTxt_3"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="18dp"
                 android:layout_marginLeft="11dp"
                 android:layout_marginTop="20dp"
-                android:text="Tiredness"
-                tools:layout_alignParentRight="true"
                 android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/symptom_4"
                 android:textColor="#D5252525"
-                android:textStyle="bold"
                 android:textSize="18sp"
+                android:textStyle="bold"
+                tools:layout_alignParentRight="true"
 
                 />
 
 
             <TextView
-                android:id="@+id/flightOfIdeasTxt"
+                android:id="@+id/symptomTxt_3"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/insomniaTxt"
+                android:layout_below="@+id/symptomTxt_2"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="18dp"
                 android:layout_marginLeft="18dp"
                 android:layout_marginTop="20dp"
-                android:text="Flight of ideas"
-                tools:layout_alignParentRight="true"
                 android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/symptom_3"
                 android:textColor="#D5252525"
-                android:textStyle="bold"
                 android:textSize="18sp"
+                android:textStyle="bold"
+                tools:layout_alignParentRight="true"
 
                 />
 
 
             <TextView
-                android:id="@+id/insomniaTxt"
+                android:id="@+id/symptomTxt_2"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/talkativenessTxt"
+                android:layout_below="@+id/symptomTxt_1"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="18dp"
                 android:layout_marginLeft="18dp"
                 android:layout_marginTop="20dp"
-                android:text="Insomnia"
-                tools:layout_alignParentRight="true"
                 android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/symptom_2"
                 android:textColor="#D5252525"
-                android:textStyle="bold"
                 android:textSize="18sp"
+                android:textStyle="bold"
+                tools:layout_alignParentRight="true"
 
                 />
 
             <TextView
-                android:id="@+id/hyperActivityTxt"
+                android:id="@+id/symptomTxt_5"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tirednessTxt"
+                android:layout_below="@+id/symptomTxt_4"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginStart="18dp"
                 android:layout_marginLeft="11dp"
                 android:layout_marginTop="20dp"
-                android:text="Hyperactivity"
-                tools:layout_alignParentRight="true"
                 android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/symptom_5"
                 android:textColor="#D5252525"
-                android:textStyle="bold"
                 android:textSize="18sp"
+                android:textStyle="bold"
+                tools:layout_alignParentRight="true"
 
                 />
 
             <TextView
-                android:id="@+id/talkativenessTxt"
+                android:id="@+id/symptomTxt_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -349,14 +349,13 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="20dp"
-                android:maxLines="1"
-                android:text="Talkativeness"
-                tools:layout_alignParentRight="true"
                 android:fontFamily="@font/josefin_sans_thin"
+                android:maxLines="1"
+                android:text="@string/symptom_1"
                 android:textColor="#D5252525"
-                android:textStyle="bold"
                 android:textSize="18sp"
-                />
+                android:textStyle="bold"
+                tools:layout_alignParentRight="true" />
 
         </RelativeLayout>
     </ScrollView>
