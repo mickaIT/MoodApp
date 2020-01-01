@@ -123,8 +123,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor=db.rawQuery(query,null);
         cursor.close();
 //        ResultsActivity.textView.setText("dupa");
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Calendar myCalendar = new GregorianCalendar(2019, 10, 11) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-M-d");
+        Calendar myCalendar = new GregorianCalendar(2020, 3, 11) {
         };
         Date date = myCalendar.getTime();
 //        ContentValues initialValues = new ContentValues();

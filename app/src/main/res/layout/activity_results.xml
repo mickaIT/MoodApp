@@ -153,7 +153,6 @@
                 android:textStyle="bold" />
 
             <View
-                android:id="@+id/view"
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
@@ -194,6 +193,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/sympthom_1"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal|center_vertical"/>
+
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/lineChart1"
                 android:layout_width="match_parent"
@@ -203,9 +211,17 @@
             </com.github.mikephil.charting.charts.LineChart>
 
             <View
-                android:id="@+id/view1"
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/sympthom_2"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal|center_vertical"/>
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/lineChart2"
@@ -216,9 +232,16 @@
             </com.github.mikephil.charting.charts.LineChart>
 
             <View
-                android:id="@+id/view2"
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/sympthom_3"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal|center_vertical"/>
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/lineChart3"
@@ -227,9 +250,16 @@
                 android:layout_weight="1" />
 
             <View
-                android:id="@+id/view3"
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/sympthom_4"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal|center_vertical"/>
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/lineChart4"
@@ -238,9 +268,16 @@
                 android:layout_weight="1" />
 
             <View
-                android:id="@+id/view4"
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/sympthom_5"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal|center_vertical"/>
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/lineChart5"
@@ -249,9 +286,16 @@
                 android:layout_weight="1" />
 
             <View
-                android:id="@+id/view5"
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/sympthom_6"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal|center_vertical"/>
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/lineChart6"
@@ -260,9 +304,16 @@
                 android:layout_weight="1" />
 
             <View
-                android:id="@+id/view6"
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/sympthom_7"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal|center_vertical"/>
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/lineChart7"
@@ -271,9 +322,16 @@
                 android:layout_weight="1" />
 
             <View
-                android:id="@+id/view7"
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:fontFamily="@font/josefin_sans_thin"
+                android:text="@string/sympthom_8"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal|center_vertical"/>
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/lineChart8"
@@ -282,13 +340,22 @@
                 android:layout_weight="1" />
 
             <View
-                android:id="@+id/view8"
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
 
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/testTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="56dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

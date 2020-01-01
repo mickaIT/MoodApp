@@ -8,5 +8,12 @@
     <string name="low_storage_error">Face detector dependencies cannot be downloaded due to low device storage</string>
     <string name="title_activity_face_recognition">Face recognition</string>
     <string name="default_text">--</string>
-
+    <string name="sympthom_1"> Sympthom 1</string>
+    <string name="sympthom_2"> Sympthom 2</string>
+    <string name="sympthom_3"> Sympthom 3</string>
+    <string name="sympthom_4"> Sympthom 4</string>
+    <string name="sympthom_5"> Sympthom 5</string>
+    <string name="sympthom_6"> Sympthom 6</string>
+    <string name="sympthom_7"> Sympthom 7</string>
+    <string name="sympthom_8"> Sympthom 8</string>
 </resources>
