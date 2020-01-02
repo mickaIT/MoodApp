@@ -123,7 +123,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Calendar myCalendar = new GregorianCalendar(2019, 10, 11) {
+        Calendar myCalendar = new GregorianCalendar(2019, 1, 11) {
         };
         Date date = myCalendar.getTime();
 
@@ -143,59 +143,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public ArrayList<String> queryXData(int month, int year){
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<String> xData= new ArrayList<>();
-        String query="SELECT "+ "strftime('%d/%H:%M', DATE)" +" FROM "+TABLE_NAME+" WHERE"+
-                " strftime('%m', DATE)='"+(month)+
-                "' AND strftime('%Y', DATE)='"+(year)+"'";
+
+//        String sMonth="0"+month;
+
+        String sMonth = String.valueOf(month).length()==1 ? "0"+month : String.valueOf(month);
+
+        String query="SELECT DATE FROM MyMoods_table WHERE\n" +
+                " strftime('%Y-%m', DATE)='"+year+"-"+sMonth+"'";
+
+//
+//                "SELECT "+ "DATE" +" FROM "+TABLE_NAME+" WHERE"+
+//                " strftime('%Y-%m', DATE)='"+(year)+"-"+(month)+"'";
+
         Cursor cursor=db.rawQuery(query,null);
 
         while(cursor.moveToNext()){
 
              xData.add(cursor.getString(0));
         }
+
         cursor.close();
         return xData;
     }
-
-    public ArrayList<String> queryMonthsData(int intMonth){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ArrayList<String> xData= new ArrayList<>();
-
-        String query="SELECT "+ "strftime('%m', DATE)" +" FROM "+TABLE_NAME+" WHERE"+ " strftime('%m', DATE)='"+intMonth+"'";
-
-        Cursor cursor=db.rawQuery(query,null);
-
-        while(cursor.moveToNext()){
-
-            xData.add(cursor.getString(0));
-        }
-        cursor.close();
-        return xData;
-    }
-
-    public ArrayList<String> queryYearData(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ArrayList<String> xData= new ArrayList<>();
-
-        String query="SELECT "+ "strftime('%m', DATE)" +" FROM "+TABLE_NAME+" WHERE"+ " strftime('%m', DATE)='12'";
-        //+ " GROUP BY "+DATE;
-        Cursor cursor=db.rawQuery(query,null);
-
-        while(cursor.moveToNext()){
-
-            xData.add(cursor.getString(0));
-        }
-        cursor.close();
-        return xData;
-    }
-
 
     public ArrayList<String> querySympthom_1_Data(int month, int year){
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<String> yData=new ArrayList<String>();
 //
-        String query="SELECT "+SYMPTHOM_1+" FROM "+TABLE_NAME+" WHERE"+
-                " strftime('%m', DATE)='"+(month)+
-                "' AND strftime('%Y', DATE)='"+(year)+"'";
+        String sMonth = String.valueOf(month).length()==1 ? "0"+month : String.valueOf(month);
+
+        String query="SELECT "+SYMPTHOM_1+" FROM "+TABLE_NAME+" WHERE"
+                + " strftime('%Y-%m', DATE)='"+year+"-"+sMonth+"'";
+
+//                " strftime('%m', DATE)='"+dupa+
+//                "' AND strftime('%Y', DATE)='"+(year)+"'";
+
                 //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
@@ -211,9 +193,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<String> yData=new ArrayList<String>();
 //
-        String query="SELECT "+SYMPTHOM_2+" FROM "+TABLE_NAME+" WHERE"+
-                " strftime('%m', DATE)='"+(month)+
-                "' AND strftime('%Y', DATE)='"+(year)+"'";
+        String sMonth = String.valueOf(month).length()==1 ? "0"+month : String.valueOf(month);
+
+        String query="SELECT "+SYMPTHOM_2+" FROM "+TABLE_NAME+" WHERE"
+                + " strftime('%Y-%m', DATE)='"+year+"-"+sMonth+"'";
+
         //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
@@ -230,9 +214,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<String> yData=new ArrayList<String>();
 //
-        String query="SELECT "+SYMPTHOM_3+" FROM "+TABLE_NAME+" WHERE"+
-                " strftime('%m', DATE)='"+(month)+
-                "' AND strftime('%Y', DATE)='"+(year)+"'";
+        String sMonth = String.valueOf(month).length()==1 ? "0"+month : String.valueOf(month);
+
+        String query="SELECT "+SYMPTHOM_3+" FROM "+TABLE_NAME+" WHERE"
+                + " strftime('%Y-%m', DATE)='"+year+"-"+sMonth+"'";
         //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
@@ -248,9 +233,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<String> yData=new ArrayList<String>();
 //
-        String query="SELECT "+SYMPTHOM_4+" FROM "+TABLE_NAME+" WHERE"+
-                " strftime('%m', DATE)='"+(month)+
-                "' AND strftime('%Y', DATE)='"+(year)+"'";
+        String sMonth = String.valueOf(month).length()==1 ? "0"+month : String.valueOf(month);
+
+        String query="SELECT "+SYMPTHOM_4+" FROM "+TABLE_NAME+" WHERE"
+                + " strftime('%Y-%m', DATE)='"+year+"-"+sMonth+"'";
         //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
@@ -266,9 +252,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<String> yData=new ArrayList<String>();
 //
-        String query="SELECT "+SYMPTHOM_5+" FROM "+TABLE_NAME+" WHERE"+
-                " strftime('%m', DATE)='"+(month)+
-                "' AND strftime('%Y', DATE)='"+(year)+"'";
+        String sMonth = String.valueOf(month).length()==1 ? "0"+month : String.valueOf(month);
+
+        String query="SELECT "+SYMPTHOM_5+" FROM "+TABLE_NAME+" WHERE"
+                + " strftime('%Y-%m', DATE)='"+year+"-"+sMonth+"'";
         //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
@@ -284,9 +271,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<String> yData=new ArrayList<String>();
 //
-        String query="SELECT "+SYMPTHOM_6+" FROM "+TABLE_NAME+" WHERE"+
-                " strftime('%m', DATE)='"+(month)+
-                "' AND strftime('%Y', DATE)='"+(year)+"'";
+        String sMonth = String.valueOf(month).length()==1 ? "0"+month : String.valueOf(month);
+
+        String query="SELECT "+SYMPTHOM_6+" FROM "+TABLE_NAME+" WHERE"
+                + " strftime('%Y-%m', DATE)='"+year+"-"+sMonth+"'";
         //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
@@ -301,9 +289,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<String> yData=new ArrayList<String>();
 //
-        String query="SELECT "+SYMPTHOM_7+" FROM "+TABLE_NAME+" WHERE"+
-                " strftime('%m', DATE)='"+(month)+
-                "' AND strftime('%Y', DATE)='"+(year)+"'";
+        String sMonth = String.valueOf(month).length()==1 ? "0"+month : String.valueOf(month);
+
+        String query="SELECT "+SYMPTHOM_7+" FROM "+TABLE_NAME+" WHERE"
+                + " strftime('%Y-%m', DATE)='"+year+"-"+sMonth+"'";
         //+" WHERE "+SYMPTHOM_1+" IS NOT NULL";
         Cursor cursor=db.rawQuery(query,null);
 
@@ -320,9 +309,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<String> yData=new ArrayList<String>();
 //
-        String query="SELECT "+SYMPTHOM_8+" FROM "+TABLE_NAME+" WHERE"+
-                " strftime('%m', DATE)='"+(month)+
-                "' AND strftime('%Y', DATE)='"+(year)+"'";
+        String sMonth = String.valueOf(month).length()==1 ? "0"+month : String.valueOf(month);
+
+        String query="SELECT "+SYMPTHOM_8+" FROM "+TABLE_NAME+" WHERE"
+                + " strftime('%Y-%m', DATE)='"+year+"-"+sMonth+"'";
         Cursor cursor=db.rawQuery(query,null);
 
 
@@ -339,9 +329,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ArrayList<Float> yData=new ArrayList<Float>();
 
-        String query="SELECT "+SYMPTHOM_1+" FROM "+TABLE_NAME+" WHERE"+
-                " strftime('%m', DATE)='"+(month)+
-                "' AND strftime('%Y', DATE)='"+(year)+"'";
+        String sMonth = String.valueOf(month).length()==1 ? "0"+month : String.valueOf(month);
+
+        String query="SELECT "+SYMPTHOM_1+" FROM "+TABLE_NAME+" WHERE"
+                + " strftime('%Y-%m', DATE)='"+year+"-"+sMonth+"'";
 
         Cursor cursor=db.rawQuery(query,null);
 
