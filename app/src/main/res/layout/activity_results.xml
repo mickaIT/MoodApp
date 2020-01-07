@@ -157,7 +157,7 @@
                 android:layout_height="20dp" />
 
             <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/barChart"
+                android:id="@+id/stackedBarChart"
                 android:layout_width="match_parent"
                 android:layout_height="380dp"
                 android:fontFamily="@font/josefin_sans_semibold" />
@@ -172,17 +172,17 @@
                 android:layout_height="10dp" />
 
             <TextView
-                android:id="@+id/textBarChartOverview"
+                android:id="@+id/textPositiveBarChartOverview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/josefin_sans_thin"
-                android:text="Sum overview"
+                android:text="Positive values monthly average"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal|center_vertical"/>
 
             <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/sumChart"
+                android:id="@+id/positiveChart"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:layout_margin="10dp" >
@@ -192,6 +192,29 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/textNegativeBarChartOverview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/josefin_sans_thin"
+                android:text="Negative values monthly average"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center_horizontal|center_vertical"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/negativeChart"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_margin="10dp" >
+
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
 
             <TextView
                 android:layout_width="match_parent"

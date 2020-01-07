@@ -46,7 +46,8 @@ public class ResultsActivity extends AppCompatActivity {
     Button viewAllResultsButton;
     Button buttonPieChart;
     BarChart stackedBarChart;
-    BarChart barChart;
+    BarChart positiveBarChart;
+    BarChart negativeBarChart;
     List<String> months = new ArrayList<>();
     ScrollChoice scrollMonths;
     TextView textYear;
@@ -90,7 +91,8 @@ public class ResultsActivity extends AppCompatActivity {
         setSympthomsData(sympthoms,currentMonth,currentYear);
 
         drawStackedBarChart(currentMonth,currentYear);
-        drawBarChart(currentMonth,currentYear);
+        drawBarChart(currentMonth,currentYear, true, positiveBarChart);
+        drawBarChart(currentMonth,currentYear, false, negativeBarChart);
         drawLineCharts(currentMonth,currentYear);
 
         textYear.setText(Integer.toString(currentYear));
@@ -103,10 +105,11 @@ public class ResultsActivity extends AppCompatActivity {
 
                 setSympthomsData(sympthoms,currentMonth,currentYear);
                 stackedBarChart.clear();
-                barChart.clear();
+                positiveBarChart.clear();
                 clearLineCharts();
 
-                drawBarChart(currentMonth,currentYear);
+                drawBarChart(currentMonth,currentYear, true, positiveBarChart);
+                drawBarChart(currentMonth,currentYear, false, negativeBarChart);
                 drawStackedBarChart(currentMonth,currentYear);
                 drawLineCharts(currentMonth,currentYear);
 
@@ -122,10 +125,11 @@ public class ResultsActivity extends AppCompatActivity {
 
                 setSympthomsData(sympthoms,currentMonth,currentYear);
                 stackedBarChart.clear();
-                barChart.clear();
+                positiveBarChart.clear();
                 clearLineCharts();
 
-                drawBarChart(currentMonth,currentYear);
+                drawBarChart(currentMonth,currentYear, true, positiveBarChart);
+                drawBarChart(currentMonth,currentYear, false, negativeBarChart);
                 drawStackedBarChart(currentMonth,currentYear);
                 drawLineCharts(currentMonth,currentYear);
 
@@ -141,11 +145,12 @@ public class ResultsActivity extends AppCompatActivity {
                 setSympthomsData(sympthoms,currentMonth,currentYear);
 
                 stackedBarChart.clear();
-                barChart.clear();
+                positiveBarChart.clear();
                 clearLineCharts();
 
                 drawStackedBarChart(currentMonth,currentYear);
-                drawBarChart(currentMonth,currentYear);
+                        drawBarChart(currentMonth,currentYear, true, positiveBarChart);
+                drawBarChart(currentMonth,currentYear, false, negativeBarChart);
                 drawLineCharts(currentMonth,currentYear);
 
 //                textView.setText(String.valueOf(intPosition));
@@ -168,9 +173,10 @@ public class ResultsActivity extends AppCompatActivity {
 
     private void initializeViews(){
 
-        barChart = (BarChart) findViewById(R.id.sumChart);
+        positiveBarChart = (BarChart) findViewById(R.id.positiveChart);
+        negativeBarChart = (BarChart) findViewById(R.id.negativeChart);
         viewAllResultsButton=(Button) findViewById(R.id.buttonViewAllResults);
-        stackedBarChart=(BarChart) findViewById(R.id.barChart);
+        stackedBarChart=(BarChart) findViewById(R.id.stackedBarChart);
         scrollMonths=(ScrollChoice) findViewById(R.id.scroll_choice_months);
         textYear=(TextView)findViewById(R.id.textYear);
         buttonLeft=(ImageButton)findViewById(R.id.left_nav);
@@ -287,7 +293,7 @@ public class ResultsActivity extends AppCompatActivity {
             stackedBarChart.getAxisRight().setEnabled(false);
 
             stackedBarChart.animateXY(1300,1300);
-//        barChart.getYAxis().setValueFormatter(new com.example.moodapp.Graphs_classes.ValueFormatter());
+//        positiveBarChart.getYAxis().setValueFormatter(new com.example.moodapp.Graphs_classes.ValueFormatter());
 
 
             stackedBarChart.setData(data);
@@ -299,7 +305,7 @@ public class ResultsActivity extends AppCompatActivity {
         }
     }
 
-    public void drawBarChart(int month,int year){
+    public void drawBarChart(int month,int year, boolean isPositive, BarChart barChart){
         ArrayList<BarEntry> mVals=new ArrayList<BarEntry>();
         final ArrayList<Float> mData = MainActivity.myDb.querySumData(month, year);
 
@@ -307,18 +313,21 @@ public class ResultsActivity extends AppCompatActivity {
 
         for(int i=0; i<mData.size();i++){
             for(int j=0; j<lineCharts.length;j++) {
-                floatVals[j] += Float.parseFloat(sympthoms[j].get(i));
+                if(isPositive&& Float.parseFloat(sympthoms[j].get(i))>0){
+                    floatVals[j] += Float.parseFloat(sympthoms[j].get(i));}
+                else if(!isPositive && Float.parseFloat(sympthoms[j].get(i))<0)
+                    floatVals[j]+=Float.parseFloat(sympthoms[j].get(i));
             }
         }
 
         for(int i=0;i<lineCharts.length;i++){
 
-            mVals.add(new BarEntry(i,floatVals[i]));
+            mVals.add(new BarEntry(i,floatVals[i]/mData.size()));
         }
 
         //set of Bar values
         BarDataSet set;
-        set=new BarDataSet(mVals,"Sum of results");
+        set=new BarDataSet(mVals,"Average of positive results");
         set.setStackLabels(labels);
         set.setDrawIcons(false);
 
